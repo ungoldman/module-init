@@ -4,6 +4,8 @@
 
 Create a node module the way Nate likes it.
 
+Using ES6 template strings so it's only for iojs right now. Also it's not even close to functional.
+
 Things Nate likes:
 
 * `README.md` with npm & travis badge ready to go
@@ -11,8 +13,7 @@ Things Nate likes:
 * `CONTRIBUTING.md` using "OPEN Open Source Project" template
 * `LICENSE.md` of the ISC variety
 * `package.json` fully filled out and fixpacked
-  * standard, tape, tap-spec installed as dev dependencies
-  * `standard && node test | tap-spec` as test script
+  * `standard && faucet` installed as dev dependencies and set as test script
 * `.travis.yml` set up
   * docker support
   * node module caching
