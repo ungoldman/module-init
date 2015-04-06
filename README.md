@@ -17,6 +17,7 @@ Things Nate likes:
   * docker support
   * node module caching
   * testing 0.10, 0.12, iojs ? maybe i don't know. maybe none of them. so many now. it's like IE.
+  * hook added w/ `travisjs hook`
 * `.gitignore` w/ `node_modules` ignored
 * blank `index.js`
 * blank `test/index.js`
