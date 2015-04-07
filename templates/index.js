@@ -1,7 +1,9 @@
-module.exports = {
-  contributing: require('./contributing'),
-  gitignore: require('./gitignore'),
-  license: require('./license'),
-  readme: require('./readme'),
-  travis: require('./travis')
-}
+module.exports = [
+  require('./changelog'),
+  require('./contributing'),
+  require('./gitignore'),
+  require('./license'),
+  require('./pkg'),
+  require('./readme'),
+  require('./travis')
+]

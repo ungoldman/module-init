@@ -1,25 +1,69 @@
+var fs = require('fs')
+var path = require('path')
+var exec = require('shelljs').exec
+var camelCase = require('camel-case')
 var templates = require('./templates')
 
 module.exports = init
 
-var pkg = {}
+function init (data, cb) {
+  if (!data ||
+      !data.pkgName ||
+      !data.pkgDescription ||
+      !data.pkgLicense ||
+      !data.pkgContributing ||
+      !data.usrName ||
+      !data.usrEmail ||
+      !data.usrGithub ||
+      !data.usrNpm
+    ) return cb('invalid data')
 
-pkg.name          // package.json name
-pkg.license       // default is ISC
-pkg.contributing  // default is open-2
+  data.nodeName = camelCase(data.pkgName)
 
-var node = {}
+  exec('git init')
 
-node.name         // package name formatted for node (camel case, no dashes)
+  data.year = new Date().getFullYear()
 
-var user = {}
+  templates.forEach(createFileFromTemplate.bind(data))
 
-user.name         // your name here
-user.email        // user email
-user.github       // username on github
-user.npm          // username on npm
+  createTestFile()
+  createIndexFile()
 
-function init (cb) {
-  console.log(templates)
-  cb(null, 'everything\'s great I took care of it all, time to relax')
+  cb(null, data.pkgName)
+}
+
+function createFileFromTemplate (tpl) {
+  var filePath = path.join(process.cwd(), tpl.filename)
+
+  if (fs.existsSync(filePath)) {
+    return console.log(`${tpl.filename} already exists`)
+  }
+
+  fs.writeFileSync(filePath, tpl(this))
+
+  console.log(`Created ${tpl.filename}`)
+}
+
+function createTestFile () {
+  var dirPath = path.join(process.cwd(), 'test')
+  var filePath = path.join(process.cwd(), 'test', 'index.js')
+
+  if (fs.existsSync(filePath)) {
+    return console.log('test/index.js already exists')
+  }
+
+  if (!fs.existsSync(dirPath)) fs.mkdirSync(dirPath)
+
+  fs.writeFileSync(filePath)
+  console.log('Created test/index.js')
+}
+
+function createIndexFile () {
+  var filePath = path.join(process.cwd(), 'index.js')
+
+  if (fs.existsSync(filePath)) {
+    return console.log('index.js already exists')
+  }
+
+  fs.writeFileSync(filePath)
 }

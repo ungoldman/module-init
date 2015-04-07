@@ -7,9 +7,11 @@
     "url": "https://github.com/ngoldman/module-init/issues"
   },
   "dependencies": {
-    "faucet": "^0.0.1",
-    "standard": "^3.3.2",
-    "tape": "^4.0.0"
+    "camel-case": "^1.1.1",
+    "git-config": "0.0.6",
+    "inquirer": "^0.8.2",
+    "mkdirp": "^0.5.0",
+    "shelljs": "^0.4.0"
   },
   "devDependencies": {
     "faucet": "0.0.1",
@@ -31,6 +33,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/ngoldman/module-init.git"
+  },
+  "bin": {
+    "module-init": "./bin/cli.js"
   },
   "scripts": {
     "test": "standard && faucet"

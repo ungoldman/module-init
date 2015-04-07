@@ -1,12 +1,8 @@
 module.exports = license
-license.ISC = ISC
+license.filename = 'LICENSE.md'
 
 function license (data) {
-  return ISC(data)
-}
-
-function ISC (data) {
-  return `Copyright (c) {{data.year}}, {{data.user.name}} <{{data.user.email}}>
+  return `Copyright (c) ${data.year}, ${data.usrName} <${data.usrEmail}>
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above

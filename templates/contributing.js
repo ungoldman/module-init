@@ -1,11 +1,7 @@
 module.exports = contributing
-contributing.open2 = open2
+contributing.filename = 'CONTRIBUTING.md'
 
-function contributing (data) {
-  return open2(data)
-}
-
-function open2 (data) {
+function contributing (data, type) {
   return `# Open-2 Contributing Guidelines
 
 **This is an OPEN Open Source Project.**
