@@ -10,7 +10,6 @@ module.exports = init
 function init (data, cb) {
   if (!data ||
       !data.pkgName ||
-      !data.pkgDescription ||
       !data.pkgLicense ||
       !data.pkgContributing ||
       !data.usrName ||
