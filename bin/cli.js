@@ -21,11 +21,11 @@ var questions = [{
   name: 'pkgDescription',
   message: 'description'
 },
-// {
-//   type: 'input',
-//   name: 'pkgKeywords',
-//   message: 'keywords'
-// },
+{
+  type: 'input',
+  name: 'pkgKeywords',
+  message: 'keywords'
+},
 {
   type: 'input',
   name: 'pkgLicense',
@@ -65,15 +65,14 @@ inquirer.prompt(questions, function (data) {
   data.usrGithub = config.github.user
 
   if (!data.pkgDescription) data.pkgDescription = ''
-  // if (data.pkgKeywords) {
-  //   data.pkgKeywords = data.pkgKeywords
-  //     .split(/[\s,]+/)
-  //     .filter(function (value, index, self) {
-  //       return !!value && self.indexOf(value) === index
-  //     })
-  // } else {
-  data.pkgKeywords = []
-  // }
+  if (data.pkgKeywords !== '') {
+    data.pkgKeywords = data.pkgKeywords
+      .split(/[\s,]+/)
+      .filter(function (value, index, self) {
+        return !!value && self.indexOf(value) === index
+      })
+      .join(', ')
+  }
 
   init(data, function (err, res) {
     if (err) {
