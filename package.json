@@ -3,6 +3,9 @@
   "description": "Create a new node module with all the right stuff.",
   "version": "0.1.1",
   "author": "Nate Goldman <nate@ngoldman.me>",
+  "bin": {
+    "module-init": "./bin/cli.js"
+  },
   "bugs": {
     "url": "https://github.com/ngoldman/module-init/issues"
   },
@@ -32,9 +35,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/ngoldman/module-init.git"
-  },
-  "bin": {
-    "module-init": "./bin/cli.js"
   },
   "scripts": {
     "test": "standard && faucet"
