@@ -10,34 +10,46 @@
 
 *work in progress*
 
-Create a node module the way Nate likes it.
+Create a node module with all the right stuff (wip).
 
-Using ES6 template strings so it's only for iojs right now. Also it's not even close to functional.
+Note: This module uses [ES6 template strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings) so it's only for [io.js](https://iojs.org/en/index.html) right now.
 
-Things Nate likes:
+The idea is to create the following in the working directory:
 
-* `README.md` with npm & travis badge ready to go
-* `CHANGELOG.md` using `changelog-init`
-* `CONTRIBUTING.md` using "OPEN Open Source Project" template
-* `LICENSE.md` of the ISC variety
-* `package.json` fully filled out and fixpacked
-  * `standard && faucet` installed as dev dependencies and set as test script
-* `.travis.yml` set up
-  * docker support
-  * node module caching
-  * testing 0.10, 0.12, iojs ? maybe i don't know. maybe none of them. so many now. it's like IE.
-  * hook added w/ `travisjs hook`
+* run `git init`
+* create `README.md` with npm & travis badges ready to go
+* create `CHANGELOG.md` using `keep-a-changelog` style
+* create `CONTRIBUTING.md` using [`open-2-contributing`](https://github.com/ngoldman/open-2-contributing) *incomplete*
+* create `LICENSE.md` using [ISC](http://en.wikipedia.org/wiki/ISC_license)
+* create `package.json` fully filled out and [fixpacked](https://github.com/HenrikJoreteg/fixpack) *incomplete*
+  * install `standard && faucet` as dev dependencies and set as test script
+* create `.travis.yml`
+  * [docker support enabled](http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure/)
+  * [`node_modules` cached](http://blog.travis-ci.com/2013-12-05-speed-up-your-builds-cache-your-dependencies/)
+  * set to test `0.12`, `iojs`
+  * hook added w/ `travisjs hook` *incomplete*
 * `.gitignore` w/ `node_modules` ignored
-* blank `index.js`
-* blank `test/index.js`
+* create blank `index.js`
+* create blank `test/index.js`
+* create repo on github *incomplete*
 
-Should work like so:
+## Install
 
 ```
-~/dir/ $ module-init
-everything's great I took care of it all, time to relax
+npm install module-init -g
 ```
 
-Related idea:
+## Usage
 
-* A module to automate turning my ideas into functional modules
+```
+$ mkdir new-project && cd new-project
+$ module-init
+```
+
+## Contributing
+
+[Open-2](CONTRIBUTING.md)
+
+## License
+
+[ISC](LICENSE.md)
