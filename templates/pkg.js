@@ -16,7 +16,6 @@ function pkg (data) {
     "tape": "^4.0.0"
   },
   "homepage": "https://github.com/${data.usrGithub}/${data.pkgName}",
-  "keywords": ${data.pkgKeywords},
   "license": "${data.pkgLicense}",
   "main": "index.js",
   "repository": {

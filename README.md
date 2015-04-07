@@ -10,7 +10,7 @@
 
 *work in progress*
 
-Create a node module with all the right stuff (wip).
+Create a new node module with all the right stuff.
 
 Note: This module uses [ES6 template strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings) so it's only for [io.js](https://iojs.org/en/index.html) right now.
 
@@ -28,7 +28,7 @@ The idea is to create the following in the working directory:
   * [`node_modules` cached](http://blog.travis-ci.com/2013-12-05-speed-up-your-builds-cache-your-dependencies/)
   * set to test `0.12`, `iojs`
   * hook added w/ `travisjs hook` *incomplete*
-* `.gitignore` w/ `node_modules` ignored
+* create `.gitignore` w/ `node_modules` ignored
 * create blank `index.js`
 * create blank `test/index.js`
 * create repo on github *incomplete*

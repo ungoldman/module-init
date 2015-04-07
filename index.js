@@ -54,7 +54,7 @@ function createTestFile () {
 
   if (!fs.existsSync(dirPath)) fs.mkdirSync(dirPath)
 
-  fs.writeFileSync(filePath)
+  fs.writeFileSync(filePath, '\n')
   console.log('Created test/index.js')
 }
 
@@ -65,5 +65,6 @@ function createIndexFile () {
     return console.log('index.js already exists')
   }
 
-  fs.writeFileSync(filePath)
+  fs.writeFileSync(filePath, '\n')
+  console.log('Created index.js')
 }
