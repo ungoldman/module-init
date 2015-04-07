@@ -19,8 +19,7 @@ var questions = [{
 {
   type: 'input',
   name: 'pkgDescription',
-  message: 'description',
-  default: 'wip'
+  message: 'description'
 },
 // {
 //   type: 'input',
