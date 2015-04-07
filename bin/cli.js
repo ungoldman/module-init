@@ -42,12 +42,10 @@ var questions = [{
 
 inquirer.prompt(questions, function (data) {
   var config = require('git-config').sync()
-  var exec = require('shelljs').exec
 
   data.usrName = config.user.name
   data.usrEmail = config.user.email
   data.usrGithub = config.github.user
-  data.usrNpm = exec('npm whoami', { silent: true }).output.replace('\n', '')
 
   if (!data.pkgDescription) data.pkgDescription = ''
   // if (data.pkgKeywords) {

@@ -14,8 +14,7 @@ function init (data, cb) {
       !data.pkgContributing ||
       !data.usrName ||
       !data.usrEmail ||
-      !data.usrGithub ||
-      !data.usrNpm
+      !data.usrGithub
     ) return cb('invalid data')
 
   data.nodeName = camelCase(data.pkgName)
