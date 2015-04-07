@@ -61,24 +61,5 @@ inquirer.prompt(questions, function (data) {
     if (err) throw err
 
     console.log(`local files for ${res} created`)
-
-    // inquirer.prompt({
-    //   type: 'confirm',
-    //   name: 'confirm',
-    //   message: `git init & create repo ${data.usrGithub}/${data.pkgName}?`,
-    //   default: true,
-    //   validate: function (input) {
-    //     if (!input) return false
-    //     return true
-    //   }
-    // }, function (answer) {
-    //   if (!answer.confirm) return process.exit(0)
-
-    //   createRepo(`${data.usrGithub}/${data.pkgName}`)
-    // })
   })
 })
-
-// function createRepo (repo) {
-//   console.log(`https://github.com/${repo}`)
-// }

@@ -31,7 +31,6 @@ The idea is to create the following in the working directory:
 * create `.gitignore` w/ `node_modules` ignored
 * create blank `index.js`
 * create blank `test/index.js`
-* create repo on github *incomplete*
 
 ## Install
 
