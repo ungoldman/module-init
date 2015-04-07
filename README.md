@@ -1,5 +1,13 @@
 # module-init
 
+[![npm][npm-img]][npm-url]
+[![travis][travis-img]][travis-url]
+
+[npm-image]: https://img.shields.io/npm/v/module-init.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/module-init
+[travis-image]: https://img.shields.io/travis/ngoldman/module-init.svg?style=flat-square
+[travis-url]: https://travis-ci.org/ngoldman/module-init
+
 *work in progress*
 
 Create a node module the way Nate likes it.
