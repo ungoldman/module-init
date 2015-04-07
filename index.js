@@ -1,7 +1,8 @@
 var fs = require('fs')
 var path = require('path')
-var exec = require('shelljs').exec
 var camelCase = require('camel-case')
+var chalk = require('chalk')
+var exec = require('shelljs').exec
 var templates = require('./templates')
 
 module.exports = init
@@ -35,12 +36,12 @@ function createFileFromTemplate (tpl) {
   var filePath = path.join(process.cwd(), tpl.filename)
 
   if (fs.existsSync(filePath)) {
-    return console.log(`${tpl.filename} already exists`)
+    return console.log(chalk.red(tpl.filename + ' already exists'))
   }
 
   fs.writeFileSync(filePath, tpl(this))
 
-  console.log(`Created ${tpl.filename}`)
+  console.log(chalk.green('Created ' + tpl.filename))
 }
 
 function createTestFile () {
@@ -48,22 +49,22 @@ function createTestFile () {
   var filePath = path.join(process.cwd(), 'test', 'index.js')
 
   if (fs.existsSync(filePath)) {
-    return console.log('test/index.js already exists')
+    return console.log(chalk.red('test/index.js already exists'))
   }
 
   if (!fs.existsSync(dirPath)) fs.mkdirSync(dirPath)
 
   fs.writeFileSync(filePath, '\n')
-  console.log('Created test/index.js')
+  console.log(chalk.green('Created test/index.js'))
 }
 
 function createIndexFile () {
   var filePath = path.join(process.cwd(), 'index.js')
 
   if (fs.existsSync(filePath)) {
-    return console.log('index.js already exists')
+    return console.log(chalk.red('index.js already exists'))
   }
 
   fs.writeFileSync(filePath, '\n')
-  console.log('Created index.js')
+  console.log(chalk.green('Created index.js'))
 }
