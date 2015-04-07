@@ -17,6 +17,7 @@ function pkg (data) {
   },
   "homepage": "https://github.com/${data.usrGithub}/${data.pkgName}",
   "license": "${data.pkgLicense}",
+  "keywords": [${data.pkgKeywords}],
   "main": "index.js",
   "repository": {
     "type": "git",
