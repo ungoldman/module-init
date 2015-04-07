@@ -16,17 +16,17 @@ test('error on invalid data', function (t) {
   t.plan(1)
 
   init({}, function (err, res) {
-    t.equal(err, 'invalid data')
+    t.equal(err, 'invalid data', 'returned invalid data error')
     t.end()
   })
 })
 
-test('create things as expected', function (t) {
+test.skip('create things as expected', function (t) {
   t.plan(1)
 
   init(testData, function (err, res) {
     t.error(err)
-    t.res(`created ${testData.pkgName}`)
+    t.equal(res.success, true, 'reported success')
     t.end()
   })
 })
