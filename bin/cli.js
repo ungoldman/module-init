@@ -58,8 +58,12 @@ inquirer.prompt(questions, function (data) {
   // }
 
   init(data, function (err, res) {
-    if (err) throw err
+    if (err) {
+      console.error(err)
+      process.exit(1)
+    }
 
     console.log(`local files for ${res} created`)
+    process.exit(0)
   })
 })
