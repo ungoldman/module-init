@@ -2,6 +2,7 @@
 
 var init = require('..')
 var path = require('path')
+var chalk = require('chalk')
 var inquirer = require('inquirer')
 
 var questions = [{
