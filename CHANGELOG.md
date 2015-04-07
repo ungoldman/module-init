@@ -3,6 +3,9 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.1.4
+* move `.gitconfig` checks before prompt ([#2](https://github.com/ngoldman/module-init/issues/2))
+
 ## 0.1.3
 * fix missing module
 * skip unimplemented test
