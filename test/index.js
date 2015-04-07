@@ -1,25 +1,32 @@
 var init = require('..')
 var test = require('tape')
-var testData = {}
+var d = Date.now()
+var testData = {
+  pkgName: `testPkg-${d}`,
+  pkgDescription: 'desc',
+  pkgLicense: 'ISC',
+  pkgContributing: 'Open-2',
+  usrName: 'BOB',
+  usrEmail: 'BOB@hotmail.com',
+  usrGithub: 'BOB',
+  usrNpm: 'BOB'
+}
 
-test('error on bad data', function (t) {
+test('error on invalid data', function (t) {
   t.plan(1)
-  // error on init if data invalid
-
-  // create temp dir
 
   init({}, function (err, res) {
-    t.error(err)
+    t.equal(err, 'invalid data')
+    t.end()
   })
 })
 
 test('create things as expected', function (t) {
   t.plan(1)
-  // error on init if data invalid
-
-  // create temp dir
 
   init(testData, function (err, res) {
     t.error(err)
+    t.res(`created ${testData.pkgName}`)
+    t.end()
   })
 })
