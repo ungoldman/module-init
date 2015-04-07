@@ -81,7 +81,6 @@ inquirer.prompt(questions, function (data) {
       process.exit(1)
     }
 
-    console.log(`local files for ${res} created`)
     process.exit(0)
   })
 })
