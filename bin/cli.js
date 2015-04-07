@@ -3,7 +3,34 @@
 var init = require('..')
 var path = require('path')
 var chalk = require('chalk')
+var config = require('git-config').sync()
 var inquirer = require('inquirer')
+var errs = 0
+
+if (!config.user ||
+  !config.user.name) {
+  console.log(chalk.red('Missing user name in .gitconfig'))
+  console.log('  Please make sure your name is set, e.g.')
+  console.log('  git config --global user.name "YOUR NAME"')
+  errs++
+}
+
+if (!config.user ||
+  !config.user.email) {
+  console.log(chalk.red('Missing user email in .gitconfig'))
+  console.log('  Please make sure your email is set, e.g.')
+  console.log('  git config --global user.email "YOUR EMAIL"')
+  errs++
+}
+
+if (!config.github || !config.github.user) {
+  console.log(chalk.red('Missing github user in .gitconfig'))
+  console.log('  Please make sure your github username is set, e.g.')
+  console.log('  git config --global github.user "YOUR USERNAME"')
+  errs++
+}
+
+if (errs) process.exit(1)
 
 var questions = [{
   type: 'input',
@@ -41,28 +68,8 @@ var questions = [{
 }]
 
 inquirer.prompt(questions, function (data) {
-  var config = require('git-config').sync()
-
-  if (!config.user ||
-    !config.user.name ||
-    !config.user.email) {
-    console.log(chalk.red('Error: missing git user info'))
-    console.log('  please make sure your name and email are in your git config')
-    console.log('  example: git config --global user.name "YOUR NAME"')
-    console.log('           git config --global user.email "YOUR EMAIL"')
-    process.exit(1)
-  }
-
   data.usrName = config.user.name
   data.usrEmail = config.user.email
-
-  if (!config.github || !config.github.user) {
-    console.log(chalk.red('Error: missing github user'))
-    console.log('  please add github user to your git config')
-    console.log('  example: git config --global github.user "YOUR USERNAME"')
-    process.exit(1)
-  }
-
   data.usrGithub = config.github.user
 
   if (!data.pkgDescription) data.pkgDescription = ''
