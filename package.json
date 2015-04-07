@@ -1,8 +1,11 @@
 {
   "name": "module-init",
-  "version": "0.1.0",
   "description": "Create a node module the way Nate likes it.",
-  "main": "index.js",
+  "version": "0.1.0",
+  "author": "Nate Goldman <nate@ngoldman.me>",
+  "bugs": {
+    "url": "https://github.com/ngoldman/module-init/issues"
+  },
   "dependencies": {
     "faucet": "^0.0.1",
     "standard": "^3.3.2",
@@ -13,26 +16,23 @@
     "standard": "^3.3.2",
     "tape": "^4.0.0"
   },
-  "scripts": {
-    "test": "standard && faucet"
-  },
+  "homepage": "https://github.com/ngoldman/module-init",
+  "keywords": [
+    "automate",
+    "automation",
+    "create",
+    "creation",
+    "init",
+    "module",
+    "package"
+  ],
+  "license": "ISC",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/ngoldman/module-init.git"
   },
-  "keywords": [
-    "module",
-    "init",
-    "automation",
-    "creation",
-    "automate",
-    "create",
-    "package"
-  ],
-  "author": "Nate Goldman <nate@ngoldman.me>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ngoldman/module-init/issues"
-  },
-  "homepage": "https://github.com/ngoldman/module-init"
+  "scripts": {
+    "test": "standard && faucet"
+  }
 }
