@@ -8,13 +8,11 @@
 [travis-image]: https://img.shields.io/travis/ngoldman/module-init.svg?style=flat-square
 [travis-url]: https://travis-ci.org/ngoldman/module-init
 
-*work in progress*
-
 Create a new node module with all the right stuff.
 
-Note: This module uses [ES6 template strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings) so it's only for [io.js](https://iojs.org/en/index.html) right now.
+⚠ This module uses [ES6 template strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings) so it's only for [io.js](https://iojs.org/en/index.html) right now. ⚠
 
-The idea is to automate the following in the working directory:
+This module is functional, but still under active development. The idea is to automate the following in the working directory:
 
 | step | done |
 | :--- | :--: |
@@ -24,7 +22,7 @@ The idea is to automate the following in the working directory:
 | `CONTRIBUTING.md` using [`open-2-contributing`](https://github.com/ngoldman/open-2-contributing) template | ✓ |
 | `LICENSE.md` using [ISC](http://en.wikipedia.org/wiki/ISC_license) | ✓ |
 | `package.json` fully filled out | ✓ |
-| [`fixpack`](https://github.com/HenrikJoreteg/fixpack) | |
+| [`fixpack`](https://github.com/HenrikJoreteg/fixpack) | ✓ |
 | [`standard`](https://github.com/feross/standard) & [`faucet`](https://github.com/substack/faucet) added as dev dependencies and set as test script | ✓ |
 | `.travis.yml` w/ [docker support enabled](http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure/) & [node_modules cached](http://blog.travis-ci.com/2013-12-05-speed-up-your-builds-cache-your-dependencies/) | ✓ |
 | travis hook added w/ [`travisjs`](https://github.com/finnp/node-travisjs) | |
@@ -38,6 +36,7 @@ The idea is to automate the following in the working directory:
 other todos:
 
 * `module-init <path>` to create new module at a specific path
+* allow choice of license, contributing
 
 ## Install
 
