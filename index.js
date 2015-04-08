@@ -2,6 +2,7 @@ var fs = require('fs')
 var path = require('path')
 var camelCase = require('camel-case')
 var chalk = require('chalk')
+var fixpack = require('fixpack')
 var exec = require('shelljs').exec
 var templates = require('./templates')
 
@@ -18,15 +19,24 @@ function init (data, cb) {
     ) return cb('invalid data')
 
   data.nodeName = camelCase(data.pkgName)
+  data.year = new Date().getFullYear()
+
+  console.log('\n> git init\n')
 
   exec('git init')
 
-  data.year = new Date().getFullYear()
+  console.log('\nCreating files...\n')
 
   templates.forEach(createFileFromTemplate.bind(data))
 
+  fixpack(path.join(process.cwd(), 'package.json'), { quiet: true })
+
   createTestFile()
   createIndexFile()
+
+  console.log('\n> npm install\n')
+
+  exec('npm install')
 
   cb(null, data.pkgName)
 }
