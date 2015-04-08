@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.1.5
+* fix keywords again
+* add [`fixpack`](https://github.com/HenrikJoreteg/fixpack/) step
+* add `npm install` step
+* add implementation table to readme
+
 ## 0.1.4
 * move `.gitconfig` checks before prompt ([#2](https://github.com/ngoldman/module-init/issues/2))
 
