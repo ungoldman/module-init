@@ -79,6 +79,9 @@ inquirer.prompt(questions, function (data) {
       .filter(function (value, index, self) {
         return !!value && self.indexOf(value) === index
       })
+      .map(function (value) {
+        return '"' + value + '"'
+      })
       .join(', ')
   }
 
