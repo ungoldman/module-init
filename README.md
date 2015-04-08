@@ -22,14 +22,14 @@ This module is functional, but still under active development. The idea is to au
 | `CONTRIBUTING.md` using [`open-2-contributing`](https://github.com/ngoldman/open-2-contributing) template | ✓ |
 | `LICENSE.md` using [ISC](http://en.wikipedia.org/wiki/ISC_license) | ✓ |
 | `package.json` fully filled out | ✓ |
-| [`fixpack`](https://github.com/HenrikJoreteg/fixpack) | ✓ |
 | [`standard`](https://github.com/feross/standard) & [`faucet`](https://github.com/substack/faucet) added as dev dependencies and set as test script | ✓ |
+| [`fixpack`](https://github.com/HenrikJoreteg/fixpack) | ✓ |
 | `.travis.yml` w/ [docker support enabled](http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure/) & [node_modules cached](http://blog.travis-ci.com/2013-12-05-speed-up-your-builds-cache-your-dependencies/) | ✓ |
-| travis hook added w/ [`travisjs`](https://github.com/finnp/node-travisjs) | |
 | `.gitignore` w/ `node_modules` ignored | ✓ |
 | blank `index.js` | ✓ |
 | blank `test/index.js` | ✓ |
-| `npm install` | |
+| `npm install` | ✓ |
+| travis hook added w/ [`travisjs`](https://github.com/finnp/node-travisjs) (requires auth) | |
 | create repo on github & push (overkill?) | |
 | `npm publish` (premature?) | |
 
