@@ -14,23 +14,30 @@ Create a new node module with all the right stuff.
 
 Note: This module uses [ES6 template strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings) so it's only for [io.js](https://iojs.org/en/index.html) right now.
 
-The idea is to create the following in the working directory:
+The idea is to automate the following in the working directory:
 
-* run `git init`
-* create `README.md` with npm & travis badges ready to go
-* create `CHANGELOG.md` using `keep-a-changelog` style
-* create `CONTRIBUTING.md` using [`open-2-contributing`](https://github.com/ngoldman/open-2-contributing) *incomplete*
-* create `LICENSE.md` using [ISC](http://en.wikipedia.org/wiki/ISC_license)
-* create `package.json` fully filled out and [fixpacked](https://github.com/HenrikJoreteg/fixpack) *incomplete*
-  * install `standard && faucet` as dev dependencies and set as test script
-* create `.travis.yml`
-  * [docker support enabled](http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure/)
-  * [`node_modules` cached](http://blog.travis-ci.com/2013-12-05-speed-up-your-builds-cache-your-dependencies/)
-  * set to test `0.12`, `iojs`
-  * hook added w/ `travisjs hook` *incomplete*
-* create `.gitignore` w/ `node_modules` ignored
-* create blank `index.js`
-* create blank `test/index.js`
+| step | done |
+| :--- | :--: |
+| `git init` | ✓ |
+| `README.md` w/ title, desc, npm & travis badges, install, usage, contributing, license | ✓ |
+| `CHANGELOG.md` using `keep-a-changelog` style | ✓ |
+| `CONTRIBUTING.md` using [`open-2-contributing`](https://github.com/ngoldman/open-2-contributing) | ✓ |
+| `LICENSE.md` using [ISC](http://en.wikipedia.org/wiki/ISC_license) | ✓ |
+| `package.json` fully filled out | ✓ |
+| [`fixpack`](https://github.com/HenrikJoreteg/fixpack) | |
+| `standard && faucet` added as dev dependencies and set as test script | ✓ |
+| `.travis.yml` w/ [docker support enabled](http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure/) & [node_modules cached](http://blog.travis-ci.com/2013-12-05-speed-up-your-builds-cache-your-dependencies/) | ✓ |
+| travis hook added w/ `travisjs hook` | |
+| `.gitignore` w/ `node_modules` ignored | ✓ |
+| blank `index.js` | ✓ |
+| blank `test/index.js` | ✓ |
+| `npm install` | |
+| create repo on github & push (overkill?) | |
+| `npm publish` (premature?) | |
+
+other todos:
+
+* `module-init <path>` to create new module at a specific path
 
 ## Install
 
