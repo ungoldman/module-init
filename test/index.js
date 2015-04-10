@@ -1,8 +1,8 @@
-var init = require('..')
+var moduleInit = require('..')
 var test = require('tape')
 var d = Date.now()
 var testData = {
-  pkgName: `testPkg-${d}`,
+  pkgName: `tmp-${d}`,
   pkgDescription: 'desc',
   pkgLicense: 'ISC',
   pkgContributing: 'Open-2',
@@ -12,21 +12,37 @@ var testData = {
   usrNpm: 'BOB'
 }
 
-test('error on invalid data', function (t) {
+test('error on missing options', function (t) {
   t.plan(1)
 
-  init({}, function (err, res) {
-    t.equal(err, 'invalid data', 'returned invalid data error')
-    t.end()
-  })
+  var required = [
+    'pkgName',
+    'pkgLicense',
+    'pkgContributing',
+    'usrName',
+    'usrEmail',
+    'usrGithub'
+  ]
+
+  moduleInit()
+    .on('err', function (err) {
+      var match = err.message.match('missing required options: ' + required.join(', '))
+      t.ok(match, 'returned missing options')
+      t.end()
+    })
+    .run()
 })
 
 test.skip('create things as expected', function (t) {
   t.plan(1)
 
-  init(testData, function (err, res) {
-    t.error(err)
-    t.equal(res.success, true, 'reported success')
-    t.end()
-  })
+  moduleInit(testData)
+    .on('err', function (err) {
+      throw err
+    })
+    .on('done', function (res) {
+      t.ok(res)
+      t.end()
+    })
+    .run()
 })

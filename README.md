@@ -51,6 +51,41 @@ $ mkdir new-project && cd new-project
 $ module-init
 ```
 
+## Node API
+
+`module-init` can also be required as a regular node module.
+
+Note that configuration properties from other sources will not be automatically inherited. All required properties need to be passed in explicitly.
+
+```js
+var data = {
+  pkgName: 'cool-package',          // required
+  pkgVersion: '1.0.0',              // required
+  pkgDescription: 'description',
+  pkgKeywords: 'one, two, three',
+  pkgLicense: 'ISC',                // required
+  pkgContributing: 'Open-2',
+  usrName: 'Your Name',             // required
+  usrEmail: 'your@email.com',       // required
+  usrGithub: 'githubUsername'       // required
+}
+
+moduleInit(data)
+  .on('create', function (msg) {
+    // file created
+  })
+  .on('warn', function (msg) {
+    // something weird happened
+  })
+  .on('err', function (err) {
+    // something went horribly wrong!
+  })
+  .on('done', function (data) {
+    // done!
+  })
+  .run() // run the thing
+```
+
 ## Contributing
 
 [Open-2](CONTRIBUTING.md)

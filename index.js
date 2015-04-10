@@ -1,79 +1,111 @@
 var fs = require('fs')
 var path = require('path')
+var util = require('util')
+var extend = util._extend
+var EventEmitter = require('events').EventEmitter
 var camelCase = require('camel-case')
-var chalk = require('chalk')
 var fixpack = require('fixpack')
 var exec = require('shelljs').exec
 var templates = require('./templates')
 
-module.exports = init
+function ModuleInitializer (data, cb) {
+  if (!(this instanceof ModuleInitializer)) return new ModuleInitializer(data, cb)
+  this.set(data)
+  this.cb = cb || function noop () {}
+}
 
-function init (data, cb) {
-  if (!data ||
-      !data.pkgName ||
-      !data.pkgLicense ||
-      !data.pkgContributing ||
-      !data.usrName ||
-      !data.usrEmail ||
-      !data.usrGithub
-    ) return cb('invalid data')
+util.inherits(ModuleInitializer, EventEmitter)
 
-  data.nodeName = camelCase(data.pkgName)
-  data.year = new Date().getFullYear()
+ModuleInitializer.prototype.set = function set (data) {
+  if (this.data) extend(this.data, data || {})
+  else this.data = data || {}
+}
 
-  console.log('\n> git init\n')
+ModuleInitializer.prototype.validate = function validate () {
+  var data = this.data
+  var missing = []
+  var required = [
+    'pkgName',
+    'pkgLicense',
+    'pkgContributing',
+    'usrName',
+    'usrEmail',
+    'usrGithub'
+  ]
+
+  required.forEach(function validateData (opt) {
+    if (!data[opt]) missing.push(opt)
+  })
+
+  return missing
+}
+
+ModuleInitializer.prototype.run = function run () {
+  var missing = this.validate()
+
+  if (missing.length) {
+    var err = new Error('missing required options: ' + missing.join(', '))
+    this.emit('err', err)
+    return this.cb(err)
+  }
+
+  this.data.nodeName = this.data.nodeName || camelCase(this.data.pkgName)
+  this.data.year = this.data.year || new Date().getFullYear()
 
   exec('git init')
 
-  console.log('\nCreating files...\n')
-
-  templates.forEach(createFileFromTemplate.bind(data))
-
-  fixpack(path.join(process.cwd(), 'package.json'), { quiet: true })
-
-  createTestFile()
-  createIndexFile()
-
-  console.log('\n> npm install\n')
+  templates.forEach(createFileFromTemplate.bind(this))
+  createIndex.apply(this)
+  createTestDir.apply(this)
+  fixpack(local('package.json'), { quiet: true })
 
   exec('npm install')
 
-  cb(null, data.pkgName)
+  this.emit('done', this.data)
+  return this.cb(null, this.data)
 }
 
 function createFileFromTemplate (tpl) {
-  var filePath = path.join(process.cwd(), tpl.filename)
+  var filePath = local(tpl.filename)
 
   if (fs.existsSync(filePath)) {
-    return console.log(chalk.red(tpl.filename + ' already exists'))
+    return this.emit('warn', tpl.filename + ' already exists')
   }
 
-  fs.writeFileSync(filePath, tpl(this))
+  fs.writeFileSync(filePath, tpl(this.data))
 
-  console.log(chalk.green('Created ' + tpl.filename))
+  this.emit('create', tpl.filename)
 }
 
-function createTestFile () {
-  var dirPath = path.join(process.cwd(), 'test')
-  var filePath = path.join(process.cwd(), 'test', 'index.js')
+function createIndex () {
+  var filePath = local('index.js')
 
   if (fs.existsSync(filePath)) {
-    return console.log(chalk.red('test/index.js already exists'))
+    return this.emit('warn', 'index.js already exists')
+  }
+
+  fs.writeFileSync(filePath, '\n')
+  this.emit('create', 'index.js')
+}
+
+function createTestDir () {
+  var dirPath = local('test')
+  var filePath = local('test', 'index.js')
+
+  if (fs.existsSync(filePath)) {
+    return this.emit('warn', 'test/index.js already exists')
   }
 
   if (!fs.existsSync(dirPath)) fs.mkdirSync(dirPath)
 
   fs.writeFileSync(filePath, '\n')
-  console.log(chalk.green('Created test/index.js'))
+  this.emit('create', 'test/index.js')
 }
 
-function createIndexFile () {
-  var filePath = path.join(process.cwd(), 'index.js')
-
-  if (fs.existsSync(filePath)) {
-    return console.log(chalk.red('index.js already exists'))
-  }
-
-  fs.writeFileSync(filePath, '\n')
-  console.log(chalk.green('Created index.js'))
+function local () {
+  var args = Array.prototype.slice.call(arguments)
+  args.unshift(process.cwd())
+  return path.join.apply(null, args)
 }
+
+module.exports = ModuleInitializer

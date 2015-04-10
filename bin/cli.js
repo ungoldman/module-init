@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var init = require('..')
+var moduleInit = require('..')
 var path = require('path')
 var chalk = require('chalk')
 var config = require('git-config').sync()
@@ -85,12 +85,24 @@ inquirer.prompt(questions, function (data) {
       .join(', ')
   }
 
-  init(data, function (err, res) {
-    if (err) {
+  moduleInit(data)
+    .on('create', function (file) {
+      // file created
+      console.warn(chalk.green('Created ' + file))
+    })
+    .on('warn', function (msg) {
+      // something weird happened
+      console.warn(chalk.yellow(msg))
+    })
+    .on('err', function (err) {
+      // something went horribly wrong!
       console.error(err)
       process.exit(1)
-    }
-
-    process.exit(0)
-  })
+    })
+    .on('done', function (res) {
+      // we did it!
+      console.log(chalk.green('✓') + ' module ' + chalk.bold(res.pkgName) + ' initialized')
+      process.exit(0)
+    })
+    .run() // run the thing
 })
