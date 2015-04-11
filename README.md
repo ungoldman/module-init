@@ -10,8 +10,6 @@
 
 Create a new node module with all the right stuff.
 
-⚠ This module uses [ES6 template strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings) so it's only for [io.js](https://iojs.org/en/index.html) right now. ⚠
-
 This module is functional, but still under active development. The idea is to automate the following in the working directory:
 
 | step | done |

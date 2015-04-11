@@ -1,8 +1,9 @@
 var moduleInit = require('..')
 var test = require('tape')
+var util = require('util')
 var d = Date.now()
 var testData = {
-  pkgName: `tmp-${d}`,
+  pkgName: util.format('tmp-%s', d),
   pkgDescription: 'desc',
   pkgLicense: 'ISC',
   pkgContributing: 'Open-2',
