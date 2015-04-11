@@ -3,8 +3,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Unreleased
-* remove io.js dependency
+## 0.2.0
+* switch Node API to EventEmitter pattern
+* remove io.js dependency ([#6](https://github.com/ngoldman/module-init/issues/6))
+* add node 0.10 & 0.12 to travis tests
+* add stability index badge as fair warning
 
 ## 0.1.5
 * fix keywords again
