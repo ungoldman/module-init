@@ -57,33 +57,45 @@ $ module-init
 Note that configuration properties from other sources will not be automatically inherited. All required properties need to be passed in explicitly.
 
 ```js
+var moduleInit = require('module-init')
+
 var data = {
   pkgName: 'cool-package',          // required
   pkgVersion: '1.0.0',              // required
-  pkgDescription: 'description',
-  pkgKeywords: 'one, two, three',
   pkgLicense: 'ISC',                // required
-  pkgContributing: 'Open-2',
   usrName: 'Your Name',             // required
   usrEmail: 'your@email.com',       // required
   usrGithub: 'githubUsername'       // required
+  pkgDescription: 'description',
+  pkgKeywords: 'one, two, three',
+  pkgContributing: 'Open-2'
 }
 
 moduleInit(data)
-  .on('create', function (msg) {
+  .on('create', function (file) {
     // file created
   })
-  .on('warn', function (msg) {
-    // something weird happened
+  .on('warn', function (message) {
+    // something weird but non-critical happened
   })
   .on('err', function (err) {
-    // something went horribly wrong!
+    // something went horribly wrong! stop everything!
   })
   .on('done', function (data) {
     // done!
   })
   .run() // run the thing
 ```
+
+`moduleInit` returns an event emitter that emits `create`, `warn`, `err`, and `done`.
+
+`moduleInit.on(string, function)` works as demonstrated in the example above.
+
+`moduleInit.run()` runs the initialization process. It also calls `moduleInit.validate()` internally before proceeding and will emit an `err` event if required options are missing. Event listeners need to be set before `moduleInit.run()` is called.
+
+`moduleInit.validate()` returns an array of missing required options. It returns an empty array if everything's fine. This method is really just for internal use, but is exposed for testing and convenience.
+
+Check [bin/cli.js#L88-L107](bin/cli.js#L88-L107) to see how the API is being used by the CLI.
 
 ## Contributing
 
