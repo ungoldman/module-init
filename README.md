@@ -29,9 +29,8 @@ This module is functional, but still under active development. The idea is to au
 | blank `index.js` | ✓ |
 | blank `test/index.js` | ✓ |
 | `npm install` | ✓ |
-| create repo on github (requires auth) | |
-| travis hook added w/ [`travisjs`](https://github.com/finnp/node-travisjs) (requires auth) | |
-| `npm publish` (too much?) | |
+| create repo on github (optional, requires auth) | |
+| travis hook added w/ [`travisjs`](https://github.com/finnp/node-travisjs) (optional, requires auth) | |
 
 other todos:
 
