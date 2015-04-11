@@ -3,6 +3,9 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Unreleased
+* remove io.js dependency
+
 ## 0.1.5
 * fix keywords again
 * add [`fixpack`](https://github.com/HenrikJoreteg/fixpack/) step
