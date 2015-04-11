@@ -2,11 +2,15 @@
 
 [![npm][npm-image]][npm-url]
 [![travis][travis-image]][travis-url]
+[![stability][stability-image]][stability-url]
+
 
 [npm-image]: https://img.shields.io/npm/v/module-init.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/module-init
 [travis-image]: https://img.shields.io/travis/ngoldman/module-init.svg?style=flat-square
 [travis-url]: https://travis-ci.org/ngoldman/module-init
+[stability-image]: https://img.shields.io/badge/stability-1%20--%20experimental-yellow.svg?style=flat-square
+[stability-url]: https://nodejs.org/api/documentation.html#documentation_stability_index
 
 Create a new node module with all the right stuff.
 
