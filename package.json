@@ -1,7 +1,7 @@
 {
   "name": "module-init",
   "description": "Create a new node module with all the right stuff.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "Nate Goldman <nate@ngoldman.me>",
   "bin": {
     "module-init": "./bin/cli.js"
@@ -13,7 +13,7 @@
     "async": "^0.9.0",
     "camel-case": "^1.1.1",
     "chalk": "^1.0.0",
-    "cwp": "^0.2.0",
+    "cwp": "^0.2.1",
     "fixpack": "^2.2.0",
     "git-config": "0.0.6",
     "inquirer": "^0.8.2",
@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "faucet": "0.0.1",
-    "standard": "^3.3.2",
+    "standard": "^3.5.0",
     "tape": "^4.0.0"
   },
   "homepage": "https://github.com/ngoldman/module-init",

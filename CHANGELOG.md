@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Unreleased
+## 0.3.0
 
 ### Added
 * add `Apache-2.0` license option
@@ -18,6 +18,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 * public method `moduleInit.validate()` returns `{ missing, invalid }` object instead of `missing` array
 * improve CLI feedback
+* update dependencies
 
 ## 0.2.0
 * switch Node API to EventEmitter pattern
