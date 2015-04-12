@@ -89,11 +89,11 @@ inquirer.prompt(questions, function (data) {
   moduleInit(data)
     .on('create', function (file) {
       // file created
-      console.warn(chalk.green('Created ' + file))
+      console.warn(chalk.green('✓ ') + chalk.bold(file) + ' created')
     })
     .on('warn', function (msg) {
       // something weird happened
-      console.warn(chalk.yellow(msg))
+      console.warn(chalk.yellow('✗ ' + msg))
     })
     .on('err', function (err) {
       // something went horribly wrong!
@@ -102,7 +102,7 @@ inquirer.prompt(questions, function (data) {
     })
     .on('done', function (res) {
       // we did it!
-      console.log(chalk.green('✓') + ' module ' + chalk.bold(res.pkgName) + ' initialized')
+      console.log(chalk.green('✓ ') + chalk.bold(res.pkgName) + ' initialized')
       process.exit(0)
     })
     .run() // run the thing

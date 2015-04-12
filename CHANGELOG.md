@@ -6,15 +6,18 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 
 ### Added
-* add `Apache-2.0` option to license
+* add `Apache-2.0` license option
 * add validation for license options
 * add test for invalid option error
 * add and expose `moduleInit.OPTIONS` constant
-* remove license from required list
 * add default license (ISC)
+
+### Removed
+* remove license from required list
 
 ### Changed
 * public method `moduleInit.validate()` returns `{ missing, invalid }` object instead of `missing` array
+* improve CLI feedback
 
 ## 0.2.0
 * switch Node API to EventEmitter pattern
