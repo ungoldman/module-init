@@ -1,9 +1,9 @@
 var fs = require('fs')
-var path = require('path')
 var util = require('util')
 var extend = util._extend
 var EventEmitter = require('events').EventEmitter
 var camelCase = require('camel-case')
+var cwp = require('cwp')
 var fixpack = require('fixpack')
 var exec = require('shelljs').exec
 var templates = require('./templates')
@@ -88,7 +88,7 @@ ModuleInit.prototype.run = function run () {
   templates.forEach(createFileFromTemplate.bind(this))
   createIndex.apply(this)
   createTestDir.apply(this)
-  fixpack(local('package.json'), { quiet: true })
+  fixpack(cwp('package.json'), { quiet: true })
 
   exec('npm install')
 
@@ -97,7 +97,7 @@ ModuleInit.prototype.run = function run () {
 }
 
 function createFileFromTemplate (tpl) {
-  var filePath = local(tpl.filename)
+  var filePath = cwp(tpl.filename)
 
   if (fs.existsSync(filePath)) {
     return this.emit('warn', tpl.filename + ' already exists')
@@ -109,7 +109,7 @@ function createFileFromTemplate (tpl) {
 }
 
 function createIndex () {
-  var filePath = local('index.js')
+  var filePath = cwp('index.js')
 
   if (fs.existsSync(filePath)) {
     return this.emit('warn', 'index.js already exists')
@@ -120,8 +120,8 @@ function createIndex () {
 }
 
 function createTestDir () {
-  var dirPath = local('test')
-  var filePath = local('test', 'index.js')
+  var dirPath = cwp('test')
+  var filePath = cwp('test/index.js')
 
   if (fs.existsSync(filePath)) {
     return this.emit('warn', 'test/index.js already exists')
@@ -131,12 +131,6 @@ function createTestDir () {
 
   fs.writeFileSync(filePath, '\n')
   this.emit('create', 'test/index.js')
-}
-
-function local () {
-  var args = Array.prototype.slice.call(arguments)
-  args.unshift(process.cwd())
-  return path.join.apply(null, args)
 }
 
 module.exports = ModuleInit
