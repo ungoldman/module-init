@@ -58,7 +58,7 @@ var questions = [{
   type: 'list',
   name: 'pkgLicense',
   message: 'license',
-  choices: ['ISC', 'Apache-2.0', 'derp'],
+  choices: ['ISC', 'Apache-2.0'],
   default: 'ISC'
 },
 {

@@ -26,18 +26,11 @@ var badData = {
 test('emit err on missing option', function (t) {
   t.plan(1)
 
-  var required = [
-    'pkgName',
-    'pkgLicense',
-    'pkgContributing',
-    'usrName',
-    'usrEmail',
-    'usrGithub'
-  ]
+  var required = moduleInit.OPTIONS.required.join(', ')
 
   moduleInit()
     .on('err', function (err) {
-      var match = err.message.match('missing required options: ' + required.join(', '))
+      var match = err.message.match('missing required options: ' + required)
       t.ok(match, 'returned missing options')
       t.end()
     })
@@ -47,9 +40,11 @@ test('emit err on missing option', function (t) {
 test('emit err on invalid option', function (t) {
   t.plan(1)
 
+  var invalid = Object.keys(moduleInit.OPTIONS.valid).join(', ')
+
   moduleInit(badData)
     .on('err', function (err) {
-      var match = err.message.match('invalid options: pkgLicense')
+      var match = err.message.match('invalid options: ' + invalid)
       t.ok(match, 'returned invalid options')
       t.end()
     })

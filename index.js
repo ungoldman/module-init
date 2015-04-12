@@ -8,44 +8,55 @@ var fixpack = require('fixpack')
 var exec = require('shelljs').exec
 var templates = require('./templates')
 
-function ModuleInitializer (data, cb) {
-  if (!(this instanceof ModuleInitializer)) return new ModuleInitializer(data, cb)
-  this.set(data)
-  this.cb = cb || function noop () {}
-}
-
-util.inherits(ModuleInitializer, EventEmitter)
-
-ModuleInitializer.prototype.set = function set (data) {
-  if (this.data) extend(this.data, data || {})
-  else this.data = data || {}
-}
-
-ModuleInitializer.prototype.validate = function validate () {
-  var data = this.data
-
-  var missing = []
-  var required = [
+var OPTIONS = {
+  required: [
     'pkgName',
-    'pkgLicense',
     'pkgContributing',
     'usrName',
     'usrEmail',
     'usrGithub'
-  ]
-
-  var invalid = []
-  var expected = {
+  ],
+  valid: {
     pkgLicense: ['ISC', 'Apache-2.0']
+  },
+  defaults: {
+    pkgLicense: 'ISC'
+  }
+}
+
+function ModuleInit (data, cb) {
+  if (!(this instanceof ModuleInit)) return new ModuleInit(data, cb)
+  this.set(data)
+  this.cb = cb || function noop () {}
+}
+
+util.inherits(ModuleInit, EventEmitter)
+
+ModuleInit.OPTIONS = OPTIONS
+
+ModuleInit.prototype.set = function set (data) {
+  var defaults = extend({}, OPTIONS.defaults)
+  if (this.data) extend(this.data, data || {})
+  else this.data = extend(defaults, data || {})
+}
+
+ModuleInit.prototype.validate = function validate () {
+  var data = this.data
+  var missing = []
+  var invalid = []
+
+  function checkMissing (opt) {
+    if (!data[opt]) missing.push(opt)
   }
 
-  required.forEach(function checkMissing (opt) {
-    if (!data[opt]) missing.push(opt)
-  })
+  function validateInput (opt) {
+    if (OPTIONS.valid[opt].indexOf(data[opt]) === -1) {
+      invalid.push(opt)
+    }
+  }
 
-  Object.keys(expected).forEach(function validateInput (opt) {
-    if (expected[opt].indexOf(data[opt]) === -1) invalid.push(opt)
-  })
+  OPTIONS.required.forEach(checkMissing)
+  Object.keys(OPTIONS.valid).forEach(validateInput)
 
   return {
     invalid: invalid,
@@ -53,7 +64,7 @@ ModuleInitializer.prototype.validate = function validate () {
   }
 }
 
-ModuleInitializer.prototype.run = function run () {
+ModuleInit.prototype.run = function run () {
   var errors = this.validate()
   var err
 
@@ -128,4 +139,4 @@ function local () {
   return path.join.apply(null, args)
 }
 
-module.exports = ModuleInitializer
+module.exports = ModuleInit

@@ -9,6 +9,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 * add `Apache-2.0` option to license
 * add validation for license options
 * add test for invalid option error
+* add and expose `moduleInit.OPTIONS` constant
+* remove license from required list
+* add default license (ISC)
 
 ### Changed
 * public method `moduleInit.validate()` returns `{ missing, invalid }` object instead of `missing` array
