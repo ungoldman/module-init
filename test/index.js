@@ -12,8 +12,18 @@ var testData = {
   usrGithub: 'BOB',
   usrNpm: 'BOB'
 }
+var badData = {
+  pkgName: util.format('tmp-%s', d),
+  pkgDescription: 'desc',
+  pkgLicense: 'klaatu',
+  pkgContributing: 'niktu',
+  usrName: 'BOB',
+  usrEmail: 'BOB@hotmail.com',
+  usrGithub: 'BOB',
+  usrNpm: 'BOB'
+}
 
-test('error on missing options', function (t) {
+test('emit err on missing option', function (t) {
   t.plan(1)
 
   var required = [
@@ -29,6 +39,18 @@ test('error on missing options', function (t) {
     .on('err', function (err) {
       var match = err.message.match('missing required options: ' + required.join(', '))
       t.ok(match, 'returned missing options')
+      t.end()
+    })
+    .run()
+})
+
+test('emit err on invalid option', function (t) {
+  t.plan(1)
+
+  moduleInit(badData)
+    .on('err', function (err) {
+      var match = err.message.match('invalid options: pkgLicense')
+      t.ok(match, 'returned invalid options')
       t.end()
     })
     .run()

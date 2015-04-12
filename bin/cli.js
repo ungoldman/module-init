@@ -55,9 +55,10 @@ var questions = [{
   message: 'keywords'
 },
 {
-  type: 'input',
+  type: 'list',
   name: 'pkgLicense',
   message: 'license',
+  choices: ['ISC', 'Apache-2.0', 'derp'],
   default: 'ISC'
 },
 {

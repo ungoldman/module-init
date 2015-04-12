@@ -23,6 +23,7 @@ ModuleInitializer.prototype.set = function set (data) {
 
 ModuleInitializer.prototype.validate = function validate () {
   var data = this.data
+
   var missing = []
   var required = [
     'pkgName',
@@ -33,18 +34,37 @@ ModuleInitializer.prototype.validate = function validate () {
     'usrGithub'
   ]
 
-  required.forEach(function validateData (opt) {
+  var invalid = []
+  var expected = {
+    pkgLicense: ['ISC', 'Apache-2.0']
+  }
+
+  required.forEach(function checkMissing (opt) {
     if (!data[opt]) missing.push(opt)
   })
 
-  return missing
+  Object.keys(expected).forEach(function validateInput (opt) {
+    if (expected[opt].indexOf(data[opt]) === -1) invalid.push(opt)
+  })
+
+  return {
+    invalid: invalid,
+    missing: missing
+  }
 }
 
 ModuleInitializer.prototype.run = function run () {
-  var missing = this.validate()
+  var errors = this.validate()
+  var err
 
-  if (missing.length) {
-    var err = new Error('missing required options: ' + missing.join(', '))
+  if (errors.missing.length) {
+    err = new Error('missing required options: ' + errors.missing.join(', '))
+    this.emit('err', err)
+    return this.cb(err)
+  }
+
+  if (errors.invalid.length) {
+    err = new Error('invalid options: ' + errors.invalid.join(', '))
     this.emit('err', err)
     return this.cb(err)
   }

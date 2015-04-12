@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Unreleased
+
+### Added
+* add `Apache-2.0` option to license
+* add validation for license options
+* add test for invalid option error
+
+### Changed
+* public method `moduleInit.validate()` returns `{ missing, invalid }` object instead of `missing` array
+
 ## 0.2.0
 * switch Node API to EventEmitter pattern
 * remove io.js dependency ([#6](https://github.com/ngoldman/module-init/issues/6))
