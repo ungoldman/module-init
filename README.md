@@ -64,13 +64,13 @@ var moduleInit = require('module-init')
 var data = {
   pkgName: 'cool-package',          // required
   pkgVersion: '1.0.0',              // required
-  pkgLicense: 'ISC',                // required
   usrName: 'Your Name',             // required
   usrEmail: 'your@email.com',       // required
   usrGithub: 'githubUsername'       // required
-  pkgDescription: 'description',
-  pkgKeywords: 'one, two, three',
-  pkgContributing: 'Open-2'
+  pkgDescription: 'description',    // optional
+  pkgKeywords: 'one, two, three',   // optional
+  pkgContributing: 'Open-2',        // optional
+  pkgLicense: 'ISC',                // optional, default: ISC
 }
 
 moduleInit(data)
