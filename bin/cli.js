@@ -66,6 +66,13 @@ var questions = [{
   name: 'pkgContributing',
   message: 'contributing',
   default: 'Open-2'
+},
+{
+  type: 'list',
+  name: 'pkgLinter',
+  message: 'linter',
+  choices: ['standard', 'semistandard'],
+  default: 'standard'
 }]
 
 inquirer.prompt(questions, function (data) {

@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "faucet": "0.0.1",
-    "standard": "*",
+    "{{pkgLinter}}": "*",
     "tape": "^4.0.0"
   },
   "homepage": "https://github.com/{{usrGithub}}/{{pkgName}}",
@@ -20,6 +20,6 @@
     "url": "https://github.com/{{usrGithub}}/{{pkgName}}.git"
   },
   "scripts": {
-    "test": "standard && faucet"
+    "test": "{{pkgLinter}} && faucet"
   }
 }

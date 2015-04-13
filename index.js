@@ -14,10 +14,12 @@ var OPTIONS = {
     'pkgContributing',
     'usrName',
     'usrEmail',
-    'usrGithub'
+    'usrGithub',
+    'pkgLinter'
   ],
   valid: {
-    pkgLicense: ['ISC', 'Apache-2.0']
+    pkgLicense: ['ISC', 'Apache-2.0'],
+    pkgLinter: ['standard', 'semistandard']
   },
   defaults: {
     pkgLicense: 'ISC'
