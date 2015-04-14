@@ -4,7 +4,6 @@
 [![travis][travis-image]][travis-url]
 [![stability][stability-image]][stability-url]
 
-
 [npm-image]: https://img.shields.io/npm/v/module-init.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/module-init
 [travis-image]: https://img.shields.io/travis/ngoldman/module-init.svg?style=flat-square
@@ -70,6 +69,7 @@ var data = {
   pkgDescription: 'description',    // optional
   pkgKeywords: 'one, two, three',   // optional
   pkgContributing: 'Open-2',        // optional
+  pkgLinter: 'standard',            // optional, default: standard
   pkgLicense: 'ISC',                // optional, default: ISC
 }
 
