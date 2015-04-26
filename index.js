@@ -18,11 +18,13 @@ var OPTIONS = {
   ],
   valid: {
     pkgLicense: ['ISC', 'Apache-2.0'],
-    pkgLinter: ['standard', 'semistandard']
+    pkgLinter: ['standard', 'semistandard'],
+    pkgSummarizer: ['faucet', 'tap-spec']
   },
   defaults: {
     pkgLicense: 'ISC',
-    pkgLinter: 'standard'
+    pkgLinter: 'standard',
+    pkgSummarizer: 'faucet'
   }
 }
 

@@ -7,7 +7,7 @@
     "url": "https://github.com/{{usrGithub}}/{{pkgName}}/issues"
   },
   "devDependencies": {
-    "faucet": "0.0.1",
+    "{{pkgSummarizer}}": "*",
     "{{pkgLinter}}": "*",
     "tape": "^4.0.0"
   },
@@ -20,6 +20,6 @@
     "url": "https://github.com/{{usrGithub}}/{{pkgName}}.git"
   },
   "scripts": {
-    "test": "{{pkgLinter}} && faucet"
+    "test": "tape test/*.js | {{pkgSummarizer}} && {{pkgLinter}}"
   }
 }

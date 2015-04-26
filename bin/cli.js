@@ -73,6 +73,13 @@ var questions = [{
   message: 'linter',
   choices: ['standard', 'semistandard'],
   default: 'standard'
+},
+{
+  type: 'list',
+  name: 'pkgSummarizer',
+  message: 'TAP summarizer',
+  choices: ['faucet', 'tap-spec'],
+  default: 'faucet'
 }]
 
 inquirer.prompt(questions, function (data) {
