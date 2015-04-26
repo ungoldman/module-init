@@ -62,10 +62,10 @@ var questions = [{
   default: 'ISC'
 },
 {
-  type: 'input',
+  type: 'confirm',
   name: 'pkgContributing',
   message: 'contributing',
-  default: 'Open-2'
+  default: true
 },
 {
   type: 'list',

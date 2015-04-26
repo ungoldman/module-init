@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Unreleased
+* use github's [node `.gitignore`](https://github.com/github/gitignore/edit/master/Node.gitignore)
+* improve `CONTRIBUTING.md` to be useful for contributors as well as collaborators
+
 ## 0.3.1
 * change `standard` devDep to always use latest ([#7](https://github.com/ngoldman/module-init/issues/7))
 * add linter options ([#8](https://github.com/ngoldman/module-init/issues/8))

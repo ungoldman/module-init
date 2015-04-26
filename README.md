@@ -20,7 +20,7 @@ This module is functional, but still under active development. The idea is to au
 | `git init` | ✓ |
 | `README.md` w/ title, desc, npm & travis badges, install, usage, contributing, license | ✓ |
 | `CHANGELOG.md` using [keepachangelog](http://keepachangelog.com/) style | ✓ |
-| `CONTRIBUTING.md` using [`open-2-contributing`](https://github.com/ngoldman/open-2-contributing) template | ✓ |
+| `CONTRIBUTING.md` | ✓ |
 | `LICENSE.md` using [ISC](http://en.wikipedia.org/wiki/ISC_license) | ✓ |
 | `package.json` fully filled out | ✓ |
 | [`standard`](https://github.com/feross/standard) & [`faucet`](https://github.com/substack/faucet) added as dev dependencies and set as test script | ✓ |
@@ -68,7 +68,7 @@ var data = {
   usrGithub: 'githubUsername'       // required
   pkgDescription: 'description',    // optional
   pkgKeywords: 'one, two, three',   // optional
-  pkgContributing: 'Open-2',        // optional
+  pkgContributing: true,            // optional
   pkgLinter: 'standard',            // optional, default: standard
   pkgLicense: 'ISC',                // optional, default: ISC
 }
