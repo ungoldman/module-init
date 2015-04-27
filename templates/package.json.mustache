@@ -7,8 +7,8 @@
     "url": "https://github.com/{{usrGithub}}/{{pkgName}}/issues"
   },
   "devDependencies": {
-    "faucet": "0.0.1",
     "{{pkgLinter}}": "*",
+    "tap-spec": "^3.0.0",
     "tape": "^4.0.0"
   },
   "homepage": "https://github.com/{{usrGithub}}/{{pkgName}}",
@@ -20,6 +20,6 @@
     "url": "https://github.com/{{usrGithub}}/{{pkgName}}.git"
   },
   "scripts": {
-    "test": "{{pkgLinter}} && faucet"
+    "test": "{{pkgLinter}} && tape test/*.js | tap-spec"
   }
 }

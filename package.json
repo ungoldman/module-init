@@ -21,8 +21,8 @@
     "shelljs": "^0.4.0"
   },
   "devDependencies": {
-    "faucet": "0.0.1",
     "standard": "^3.5.0",
+    "tap-spec": "^3.0.0",
     "tape": "^4.0.0"
   },
   "homepage": "https://github.com/ngoldman/module-init",
@@ -42,6 +42,6 @@
     "url": "https://github.com/ngoldman/module-init.git"
   },
   "scripts": {
-    "test": "standard && faucet"
+    "test": "standard && tape test/*.js | tap-spec"
   }
 }

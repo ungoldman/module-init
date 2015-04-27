@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 * use github's [node `.gitignore`](https://github.com/github/gitignore/edit/master/Node.gitignore)
 * improve `CONTRIBUTING.md` to be useful for contributors as well as collaborators
+* switch from `faucet` to `tap-spec` for tap output ([#12](https://github.com/ngoldman/module-init/issues/12))
 
 ## 0.3.1
 * change `standard` devDep to always use latest ([#7](https://github.com/ngoldman/module-init/issues/7))
