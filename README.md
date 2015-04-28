@@ -101,7 +101,7 @@ Check [bin/cli.js#L88-L107](bin/cli.js#L88-L107) to see how the API is being use
 
 ## Contributing
 
-[Open-2](CONTRIBUTING.md)
+Contributions welcome! Please read the [contributing guidelines](CONTRIBUTING.md) first.
 
 ## License
 
