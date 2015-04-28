@@ -2,14 +2,14 @@
 
 [![npm][npm-image]][npm-url]
 [![travis][travis-image]][travis-url]
-[![stability][stability-image]][stability-url]
+[![experimental][experimental-img]][stability-url]
 
 [npm-image]: https://img.shields.io/npm/v/module-init.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/module-init
 [travis-image]: https://img.shields.io/travis/ngoldman/module-init.svg?style=flat-square
 [travis-url]: https://travis-ci.org/ngoldman/module-init
-[stability-image]: https://img.shields.io/badge/stability-1%20--%20experimental-yellow.svg?style=flat-square
-[stability-url]: https://nodejs.org/api/documentation.html#documentation_stability_index
+[experimental-img]: https://img.shields.io/badge/stability-1%20--%20experimental-orange.svg?style=flat-square
+[stability-url]: https://iojs.org/api/documentation.html#documentation_stability_index
 
 Create a new node module with all the right stuff.
 
@@ -23,7 +23,7 @@ This module is functional, but still under active development. The idea is to au
 | `CONTRIBUTING.md` | ✓ |
 | `LICENSE.md` using [ISC](http://en.wikipedia.org/wiki/ISC_license) | ✓ |
 | `package.json` fully filled out | ✓ |
-| [`standard`](https://github.com/feross/standard) & [`faucet`](https://github.com/substack/faucet) added as dev dependencies and set as test script | ✓ |
+| [`standard`](https://github.com/feross/standard) & [`tape`](https://github.com/substack/tape) added as dev dependencies and set as test script | ✓ |
 | [`fixpack`](https://github.com/HenrikJoreteg/fixpack) | ✓ |
 | `.travis.yml` w/ [docker support enabled](http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure/) & [node_modules cached](http://blog.travis-ci.com/2013-12-05-speed-up-your-builds-cache-your-dependencies/) | ✓ |
 | `.gitignore` w/ `node_modules` ignored | ✓ |
