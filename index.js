@@ -11,7 +11,6 @@ var templates = require('./templates')
 var OPTIONS = {
   required: [
     'pkgName',
-    'pkgContributing',
     'usrName',
     'usrEmail',
     'usrGithub'
@@ -21,6 +20,7 @@ var OPTIONS = {
     pkgLinter: ['standard', 'semistandard']
   },
   defaults: {
+   'pkgContributing': true,
     pkgLicense: 'ISC',
     pkgLinter: 'standard'
   }
