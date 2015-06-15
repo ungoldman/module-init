@@ -2,32 +2,54 @@ var mustache = require('micromustache')
 var path = require('path')
 var fs = require('fs')
 
-function getTemplate (file) {
+function getTemplate (tpl) {
   var template = function (data) {
+    var filename = tpl.file
     var filePath
 
-    switch (file) {
+    switch (filename) {
       case 'LICENSE.md':
-        filePath = path.join(__dirname, file, data.pkgLicense + '.mustache')
+        filePath = path.join(__dirname, filename, data.pkgLicense + '.mustache')
         break
       default:
-        filePath = path.join(__dirname, file + '.mustache')
+        filePath = path.join(__dirname, filename + '.mustache')
     }
 
     var fileContent = fs.readFileSync(filePath, 'utf8')
     return mustache.render(fileContent, data)
   }
 
-  template.filename = file
-  return template
+  tpl.template = template
+  return tpl
 }
 
 module.exports = [
-  '.gitignore',
-  '.travis.yml',
-  'CHANGELOG.md',
-  'CONTRIBUTING.md',
-  'LICENSE.md',
-  'README.md',
-  'package.json'
+  {
+    file: '.gitignore',
+    name: 'pkgGitignore'
+  },
+  {
+    file: '.travis.yml',
+    name: 'pkgTravis'
+  },
+  {
+    file: 'CHANGELOG.md',
+    name: 'pkgChangelog'
+  },
+  {
+    file: 'CONTRIBUTING.md',
+    name: 'pkgContributing'
+  },
+  {
+    file: 'LICENSE.md',
+    name: 'pkgLicense'
+  },
+  {
+    file: 'README.md',
+    name: 'pkgReadme'
+  },
+  {
+    file: 'package.json',
+    name: 'pkgJson'
+  }
 ].map(getTemplate)

@@ -68,9 +68,9 @@ var data = {
   usrGithub: 'githubUsername'       // required
   pkgDescription: 'description',    // optional
   pkgKeywords: 'one, two, three',   // optional
-  pkgContributing: true,            // optional
+  pkgContributing: true,            // optional, default: true
   pkgLinter: 'standard',            // optional, default: standard
-  pkgLicense: 'ISC',                // optional, default: ISC
+  pkgLicense: 'ISC'                 // optional, default: ISC
 }
 
 moduleInit(data)

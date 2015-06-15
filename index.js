@@ -99,15 +99,17 @@ ModuleInit.prototype.run = function run () {
 }
 
 function createFileFromTemplate (tpl) {
-  var filePath = cwp(tpl.filename)
+  if (this.data[tpl.name] === false) return
+
+  var filePath = cwp(tpl.file)
 
   if (fs.existsSync(filePath)) {
-    return this.emit('warn', tpl.filename + ' already exists')
+    return this.emit('warn', tpl.file + ' already exists')
   }
 
-  fs.writeFileSync(filePath, tpl(this.data))
+  fs.writeFileSync(filePath, tpl.template(this.data))
 
-  this.emit('create', tpl.filename)
+  this.emit('create', tpl.file)
 }
 
 function createIndex () {
