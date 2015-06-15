@@ -5,8 +5,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
-### Fixes
+### Changed
+* Refactored object returned by `templates/index.js` to deal with fix for ([#13](https://github.com/ngoldman/module-init/issues/13))
+
+### Fixed
 * remove `pkgContributing` from required list, default to true
+* fix error when selecting 'No' for contributing ([#13](https://github.com/ngoldman/module-init/issues/13))
 
 ## 0.3.2
 * use github's [node `.gitignore`](https://github.com/github/gitignore/edit/master/Node.gitignore)
