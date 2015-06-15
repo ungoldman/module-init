@@ -1,5 +1,7 @@
 # module-init
 
+> Create a new node module with all the right stuff.
+
 [![npm][npm-image]][npm-url]
 [![travis][travis-image]][travis-url]
 [![experimental][experimental-img]][stability-url]
@@ -10,8 +12,6 @@
 [travis-url]: https://travis-ci.org/ngoldman/module-init
 [experimental-img]: https://img.shields.io/badge/stability-1%20--%20experimental-orange.svg?style=flat-square
 [stability-url]: https://iojs.org/api/documentation.html#documentation_stability_index
-
-Create a new node module with all the right stuff.
 
 This module is functional, but still under active development. The idea is to automate the following in the working directory:
 
