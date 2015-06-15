@@ -97,7 +97,7 @@ moduleInit(data)
 
 `moduleInit.validate()` returns an array of missing required options. It returns an empty array if everything's fine. This method is really just for internal use, but is exposed for testing and convenience.
 
-Check [bin/cli.js#L88-L107](bin/cli.js#L88-L107) to see how the API is being used by the CLI.
+Take a look at [bin/cli.js](bin/cli.js) to see how the API is being used by the CLI.
 
 ## Contributing
 
