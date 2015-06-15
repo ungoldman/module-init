@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Unreleased
+
+### Fixes
+* remove `pkgContributing` from required list, default to true
+
 ## 0.3.2
 * use github's [node `.gitignore`](https://github.com/github/gitignore/edit/master/Node.gitignore)
 * improve `CONTRIBUTING.md` to be useful for contributors as well as collaborators
