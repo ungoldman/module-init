@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "standard": "^4.2.1",
-    "tap-spec": "^3.0.0",
+    "tap-spec": "^4.0.2",
     "tape": "^4.0.0"
   },
   "homepage": "https://github.com/ngoldman/module-init",
