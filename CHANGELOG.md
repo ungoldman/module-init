@@ -5,6 +5,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
+### Changed
+* Updated contributing guidelines & template based on changes in [ngoldman/contributing@b1f54df](https://github.com/ngoldman/contributing/commit/b1f54df669d02e1db87598bc07540d823b423d4d).
+
 ### Fixed
 * Use `tap-spec` 4.x to fix rendering issues ([#16](https://github.com/ngoldman/module-init/issues/16))
 
