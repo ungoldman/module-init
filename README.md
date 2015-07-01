@@ -13,7 +13,9 @@
 [experimental-img]: https://img.shields.io/badge/stability-1%20--%20experimental-orange.svg?style=flat-square
 [stability-url]: https://iojs.org/api/documentation.html#documentation_stability_index
 
-This module is functional, but still under active development. The idea is to automate the following in the working directory:
+Command-line tool to quickly create a new node module with readme, license, contributing guidelines, and other goodies.
+
+*This module is functional, but still under active development. The idea is to automate the following in the working directory:*
 
 | step | done |
 | :--- | :--: |
@@ -36,7 +38,6 @@ This module is functional, but still under active development. The idea is to au
 other todos:
 
 * `module-init <path>` to create new module at a specific path
-* allow choice of license, contributing
 
 ## Install
 
