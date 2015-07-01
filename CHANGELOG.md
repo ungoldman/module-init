@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Unreleased
+## 1.0.1 - 2015-07-01
 
 ### Changed
 * Updated contributing guidelines & template based on changes in [ngoldman/contributing@b1f54df](https://github.com/ngoldman/contributing/commit/b1f54df669d02e1db87598bc07540d823b423d4d).
