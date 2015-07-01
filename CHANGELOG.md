@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Unreleased
+
+### Fixed
+* Use `tap-spec` 4.x to fix rendering issues ([#16](https://github.com/ngoldman/module-init/issues/16))
+
 ## 1.0.0 - 2015-06-15
 
 ### Changed
