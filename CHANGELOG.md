@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Unreleased
+
+### Added
+* CLI now has `--version` and `--help` arguments
+
 ## 1.0.1 - 2015-07-01
 
 ### Changed

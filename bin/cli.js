@@ -5,7 +5,38 @@ var path = require('path')
 var chalk = require('chalk')
 var config = require('git-config').sync()
 var inquirer = require('inquirer')
+var clopts = require('cliclopts')([
+  {
+    name: 'version',
+    abbr: 'v',
+    boolean: true,
+    help: 'show version information'
+  },
+  {
+    name: 'help',
+    abbr: 'h',
+    help: 'show help',
+    boolean: true
+  }
+])
+var argv = require('minimist')(process.argv.slice(2), {
+  alias: clopts.alias(),
+  boolean: clopts.boolean(),
+  default: clopts.default()
+})
 var errs = 0
+
+if (argv.version) {
+  console.log(require('../package').version)
+  process.exit(0)
+}
+
+if (argv.help) {
+  console.log('Usage: module-init [options]')
+  clopts.print()
+  console.log('Run without arguments for interactive mode')
+  process.exit(0)
+}
 
 if (!config.user ||
   !config.user.name) {
