@@ -47,9 +47,28 @@ npm install module-init -g
 
 ## Usage
 
-```
+```bash
 $ mkdir new-project && cd new-project
 $ module-init
+? name: new-project
+? version: 1.0.0
+? description:
+? keywords:
+? license: ISC
+? contributing: Yes
+? linter: standard
+Initialized empty Git repository in /Users/yourname/new-project/.git/
+✓ .gitignore created
+✓ .travis.yml created
+✓ CHANGELOG.md created
+✓ CONTRIBUTING.md created
+✓ LICENSE.md created
+✓ README.md created
+✓ package.json created
+✓ index.js created
+✓ test/index.js created
+# npm install
+✓ new-project initialized
 ```
 
 ## Node API
