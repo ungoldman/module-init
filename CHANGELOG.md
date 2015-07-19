@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Unreleased
+## 1.1.1 - 2015-07-18
 * Fix typo in CONTRIBUTING.md & CONTRIBUTING.md.mustache
 
 ## 1.1.0 - 2015-07-05
