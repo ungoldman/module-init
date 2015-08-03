@@ -5,6 +5,8 @@ var path = require('path')
 var chalk = require('chalk')
 var config = require('git-config').sync()
 var inquirer = require('inquirer')
+var canHazPackage = require('can-haz-package')
+
 var clopts = require('cliclopts')([
   {
     name: 'version',
@@ -67,44 +69,45 @@ var questions = [{
   type: 'input',
   name: 'pkgName',
   message: 'name',
-  default: path.basename(process.cwd())
+  default: path.basename(process.cwd()),
+  validate: canHazPackage
 },
-{
-  type: 'input',
-  name: 'pkgVersion',
-  message: 'version',
-  default: '1.0.0'
-},
-{
-  type: 'input',
-  name: 'pkgDescription',
-  message: 'description'
-},
-{
-  type: 'input',
-  name: 'pkgKeywords',
-  message: 'keywords'
-},
-{
-  type: 'list',
-  name: 'pkgLicense',
-  message: 'license',
-  choices: ['ISC', 'Apache-2.0'],
-  default: 'ISC'
-},
-{
-  type: 'confirm',
-  name: 'pkgContributing',
-  message: 'contributing',
-  default: true
-},
-{
-  type: 'list',
-  name: 'pkgLinter',
-  message: 'linter',
-  choices: ['standard', 'semistandard'],
-  default: 'standard'
-}]
+  {
+    type: 'input',
+    name: 'pkgVersion',
+    message: 'version',
+    default: '1.0.0'
+  },
+  {
+    type: 'input',
+    name: 'pkgDescription',
+    message: 'description'
+  },
+  {
+    type: 'input',
+    name: 'pkgKeywords',
+    message: 'keywords'
+  },
+  {
+    type: 'list',
+    name: 'pkgLicense',
+    message: 'license',
+    choices: ['ISC', 'Apache-2.0'],
+    default: 'ISC'
+  },
+  {
+    type: 'confirm',
+    name: 'pkgContributing',
+    message: 'contributing',
+    default: true
+  },
+  {
+    type: 'list',
+    name: 'pkgLinter',
+    message: 'linter',
+    choices: ['standard', 'semistandard'],
+    default: 'standard'
+  }]
 
 inquirer.prompt(questions, function (data) {
   data.usrName = config.user.name
