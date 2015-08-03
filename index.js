@@ -20,9 +20,9 @@ var OPTIONS = {
     pkgLinter: ['standard', 'semistandard']
   },
   defaults: {
-   'pkgContributing': true,
-    pkgLicense: 'ISC',
-    pkgLinter: 'standard'
+    'pkgContributing': true,
+    'pkgLicense': 'ISC',
+    'pkgLinter': 'standard'
   }
 }
 
