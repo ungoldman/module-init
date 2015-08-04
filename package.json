@@ -1,7 +1,7 @@
 {
   "name": "module-init",
   "description": "Create a new node module with all the right stuff.",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "author": "Nate Goldman <nate@ngoldman.me>",
   "bin": {
     "module-init": "./bin/cli.js"
