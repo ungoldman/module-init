@@ -118,6 +118,16 @@ Take a look at [bin/cli.js](bin/cli.js) to see how the API is being used by the 
 
 Contributions welcome! Please read the [contributing guidelines](CONTRIBUTING.md) before getting started.
 
+## Collaborators
+
+`module-init` is only possible due to the excellent work of the following collaborators:
+
+<table><tbody><tr><th align="left">bcomnes</th><td><a href="https://github.com/bcomnes">GitHub/bcomnes</a></td></tr>
+<tr><th align="left">Flet</th><td><a href="https://github.com/Flet">GitHub/Flet</a></td></tr>
+<tr><th align="left">ngoldman</th><td><a href="https://github.com/ngoldman">GitHub/ngoldman</a></td></tr>
+<tr><th align="left">paulcpederson</th><td><a href="https://github.com/paulcpederson">GitHub/paulcpederson</a></td></tr>
+</tbody></table>
+
 ## License
 
 [ISC](LICENSE)
