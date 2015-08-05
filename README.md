@@ -21,7 +21,7 @@ Command-line tool to quickly create a new node module with readme, license, cont
 * creates `CONTRIBUTING.md` using [ngoldman/contributing](https://github.com/ngoldman/contributing) boilerplate
 * creates `LICENSE` using [ISC](http://en.wikipedia.org/wiki/ISC_license) or [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 * creates `package.json` with all relevant fields filled out and [fixpacked](https://github.com/HenrikJoreteg/fixpack)
-* adds [`standard`](https://github.com/feross/standard) (or [semistandard](https://github.com/Flet/semistandard)) & [`tape`](https://github.com/substack/tape) added as dev dependencies and set as test script
+* adds [`standard`](https://github.com/feross/standard) or [`semistandard`](https://github.com/Flet/semistandard) & [`tape`](https://github.com/substack/tape) as dev dependencies and sets test script
 * creates `.travis.yml` w/ [docker support enabled](http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure/) & [node_modules cached](http://blog.travis-ci.com/2013-12-05-speed-up-your-builds-cache-your-dependencies/)
 * creates `.gitignore` w/ `node_modules` ignored
 * creates a blank `index.js`
