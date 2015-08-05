@@ -4,24 +4,24 @@
 
 [![npm][npm-image]][npm-url]
 [![travis][travis-image]][travis-url]
-[![experimental][experimental-img]][stability-url]
 
 [npm-image]: https://img.shields.io/npm/v/module-init.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/module-init
 [travis-image]: https://img.shields.io/travis/ngoldman/module-init.svg?style=flat-square
 [travis-url]: https://travis-ci.org/ngoldman/module-init
-[experimental-img]: https://img.shields.io/badge/stability-1%20--%20experimental-orange.svg?style=flat-square
-[stability-url]: https://iojs.org/api/documentation.html#documentation_stability_index
 
 Command-line tool to quickly create a new node module with readme, license, contributing guidelines, and other goodies.
 
 * runs `git init`
-* creates `README.md` w/ title, desc, npm & travis badges, install, usage, contributing, license
+* creates `README.md` w/ title, desc, npm & travis badges, install, usage, contributing, & license sections
 * creates `CHANGELOG.md` using [keepachangelog](http://keepachangelog.com/) style
 * creates `CONTRIBUTING.md` using [ngoldman/contributing](https://github.com/ngoldman/contributing) boilerplate
-* creates `LICENSE` using [ISC](http://en.wikipedia.org/wiki/ISC_license) or [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)
-* creates `package.json` with all relevant fields filled out and [fixpacked](https://github.com/HenrikJoreteg/fixpack)
-* adds [`standard`](https://github.com/feross/standard) or [`semistandard`](https://github.com/Flet/semistandard) & [`tape`](https://github.com/substack/tape) as dev dependencies and sets test script
+* creates `LICENSE` ([ISC](http://opensource.org/licenses/ISC) or [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0))
+* creates `package.json` with all standard fields filled out
+  * adds code style linter ([`standard`](https://github.com/feross/standard) or [`semistandard`](https://github.com/Flet/semistandard)) to `devDependencies`
+  * adds [`tape`](https://github.com/substack/tape) & [`tap-spec`](https://github.com/scottcorgan/tap-spec) to `devDependencies`
+  * sets up test script
+  * runs [`fixpack`](https://github.com/HenrikJoreteg/fixpack)
 * creates `.travis.yml` w/ [docker support enabled](http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure/) & [node_modules cached](http://blog.travis-ci.com/2013-12-05-speed-up-your-builds-cache-your-dependencies/)
 * creates `.gitignore` w/ `node_modules` ignored
 * creates a blank `index.js`
