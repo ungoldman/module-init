@@ -15,29 +15,24 @@
 
 Command-line tool to quickly create a new node module with readme, license, contributing guidelines, and other goodies.
 
-*This module is functional, but still under active development. The idea is to automate the following in the working directory:*
+* runs `git init`
+* creates `README.md` w/ title, desc, npm & travis badges, install, usage, contributing, license
+* creates `CHANGELOG.md` using [keepachangelog](http://keepachangelog.com/) style
+* creates `CONTRIBUTING.md` using [ngoldman/contributing](https://github.com/ngoldman/contributing) boilerplate
+* creates `LICENSE` using [ISC](http://en.wikipedia.org/wiki/ISC_license) or [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+* creates `package.json` with all relevant fields filled out and [fixpacked](https://github.com/HenrikJoreteg/fixpack)
+* adds [`standard`](https://github.com/feross/standard) (or [semistandard](https://github.com/Flet/semistandard)) & [`tape`](https://github.com/substack/tape) added as dev dependencies and set as test script
+* creates `.travis.yml` w/ [docker support enabled](http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure/) & [node_modules cached](http://blog.travis-ci.com/2013-12-05-speed-up-your-builds-cache-your-dependencies/)
+* creates `.gitignore` w/ `node_modules` ignored
+* creates a blank `index.js`
+* creates a blank `test/index.js`
+* runs `npm install`
 
-| step | done |
-| :--- | :--: |
-| `git init` | ✓ |
-| `README.md` w/ title, desc, npm & travis badges, install, usage, contributing, license | ✓ |
-| `CHANGELOG.md` using [keepachangelog](http://keepachangelog.com/) style | ✓ |
-| `CONTRIBUTING.md` | ✓ |
-| `LICENSE.md` using [ISC](http://en.wikipedia.org/wiki/ISC_license) | ✓ |
-| `package.json` fully filled out | ✓ |
-| [`standard`](https://github.com/feross/standard) & [`tape`](https://github.com/substack/tape) added as dev dependencies and set as test script | ✓ |
-| [`fixpack`](https://github.com/HenrikJoreteg/fixpack) | ✓ |
-| `.travis.yml` w/ [docker support enabled](http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure/) & [node_modules cached](http://blog.travis-ci.com/2013-12-05-speed-up-your-builds-cache-your-dependencies/) | ✓ |
-| `.gitignore` w/ `node_modules` ignored | ✓ |
-| blank `index.js` | ✓ |
-| blank `test/index.js` | ✓ |
-| `npm install` | ✓ |
-| create repo on github (optional, requires auth) | |
-| travis hook added w/ [`travisjs`](https://github.com/finnp/node-travisjs) (optional, requires auth) | |
+**todo**
 
-other todos:
-
-* `module-init <path>` to create new module at a specific path
+* create repo on github (optional, requires auth)
+* add travis hook w/ [`travisjs`](https://github.com/finnp/node-travisjs) (optional, requires auth)
+* allow `module-init [path] [options]` in cli to create new module at a specific path
 
 ## Install
 
@@ -62,7 +57,7 @@ Initialized empty Git repository in /Users/yourname/new-project/.git/
 ✓ .travis.yml created
 ✓ CHANGELOG.md created
 ✓ CONTRIBUTING.md created
-✓ LICENSE.md created
+✓ LICENSE created
 ✓ README.md created
 ✓ package.json created
 ✓ index.js created
