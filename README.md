@@ -12,6 +12,7 @@
 
 Command-line tool to quickly create a new node module with readme, license, contributing guidelines, and other goodies.
 
+* checks if name is valid and available using [`can-haz-package`](https://github.com/flet/can-haz-package)
 * runs `git init`
 * creates `README.md` w/ title, desc, npm & travis badges, install, usage, contributing, & license sections
 * creates `CHANGELOG.md` using [keepachangelog](http://keepachangelog.com/) style
