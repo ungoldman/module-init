@@ -3,8 +3,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Unreleased
+* Change `LICENSE.md` to `LICENSE` in all the places
+
 ## 1.2.0 - 2015-08-04
-* validate package name with [can-haz-package](https://github.com/flet/can-haz-package)
+* Validate package name with [can-haz-package](https://github.com/flet/can-haz-package)
 
 ## 1.1.1 - 2015-07-18
 * Fix typo in CONTRIBUTING.md & CONTRIBUTING.md.mustache

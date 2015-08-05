@@ -125,4 +125,4 @@ Contributions welcome! Please read the [contributing guidelines](CONTRIBUTING.md
 
 ## License
 
-[ISC](LICENSE.md)
+[ISC](LICENSE)

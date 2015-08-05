@@ -8,7 +8,7 @@ function getTemplate (tpl) {
     var filePath
 
     switch (filename) {
-      case 'LICENSE.md':
+      case 'LICENSE':
         filePath = path.join(__dirname, filename, data.pkgLicense + '.mustache')
         break
       default:
@@ -41,7 +41,7 @@ module.exports = [
     name: 'pkgContributing'
   },
   {
-    file: 'LICENSE.md',
+    file: 'LICENSE',
     name: 'pkgLicense'
   },
   {
