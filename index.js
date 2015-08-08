@@ -22,7 +22,8 @@ var OPTIONS = {
   defaults: {
     'pkgContributing': true,
     'pkgLicense': 'ISC',
-    'pkgLinter': 'standard'
+    'pkgLinter': 'standard',
+    'pkgVersion': '1.0.0'
   }
 }
 
