@@ -33,7 +33,6 @@ Command-line tool to quickly create a new node module with readme, license, cont
 
 * create repo on github (optional, requires auth)
 * add travis hook w/ [`travisjs`](https://github.com/finnp/node-travisjs) (optional, requires auth)
-* allow `module-init [path] [options]` in cli to create new module at a specific path
 
 ## Install
 
@@ -43,7 +42,12 @@ npm install module-init -g
 
 ## Usage
 
-```bash
+```
+$ module-init --help
+Usage: module-init [options]
+    --dir, -d             specify module directory (default: cwd)
+    --version, -v         show version information
+    --help, -h            show help
 $ mkdir new-project && cd new-project
 $ module-init
 ? name: new-project
@@ -63,7 +67,12 @@ Initialized empty Git repository in /Users/yourname/new-project/.git/
 ✓ package.json created
 ✓ index.js created
 ✓ test/index.js created
-# npm install
+tape@4.0.3 node_modules/tape
+...
+tap-spec@4.0.2 node_modules/tap-spec
+...
+standard@5.0.2 node_modules/standard
+...
 ✓ new-project initialized
 ```
 
@@ -71,7 +80,7 @@ Initialized empty Git repository in /Users/yourname/new-project/.git/
 
 `module-init` can also be required as a regular node module.
 
-Note that configuration properties from other sources will not be automatically inherited. All required properties need to be passed in explicitly.
+Configuration properties from other sources (`.gitconfig`, current working directory) will not be automatically used as defaults in this mode. All required properties need to be passed in explicitly.
 
 ```js
 var moduleInit = require('module-init')
@@ -86,7 +95,8 @@ var data = {
   pkgKeywords: 'one, two, three',   // optional
   pkgContributing: true,            // optional, default: true
   pkgLinter: 'standard',            // optional, default: standard
-  pkgLicense: 'ISC'                 // optional, default: ISC
+  pkgLicense: 'ISC',                // optional, default: ISC
+  dir: 'project-directory'          // optional: default: cwd
 }
 
 moduleInit(data)

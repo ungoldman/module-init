@@ -1,11 +1,13 @@
 var fs = require('fs')
+var path = require('path')
 var util = require('util')
 var extend = util._extend
 var EventEmitter = require('events').EventEmitter
 var camelCase = require('camel-case')
-var cwp = require('cwp')
-var fixpack = require('fixpack')
+var cd = require('shelljs').cd
 var exec = require('shelljs').exec
+var fixpack = require('fixpack')
+var mkdirp = require('mkdirp')
 var templates = require('./templates')
 
 var OPTIONS = {
@@ -20,9 +22,11 @@ var OPTIONS = {
     pkgLinter: ['standard', 'semistandard']
   },
   defaults: {
+    'dir': process.cwd(),
     'pkgContributing': true,
     'pkgLicense': 'ISC',
-    'pkgLinter': 'standard'
+    'pkgLinter': 'standard',
+    'pkgVersion': '1.0.0'
   }
 }
 
@@ -67,6 +71,8 @@ ModuleInit.prototype.validate = function validate () {
 }
 
 ModuleInit.prototype.run = function run () {
+  var cwd = process.cwd()
+  var differentDir = this.data.dir !== cwd
   var errors = this.validate()
   var err
 
@@ -85,14 +91,21 @@ ModuleInit.prototype.run = function run () {
   this.data.nodeName = this.data.nodeName || camelCase(this.data.pkgName)
   this.data.year = this.data.year || new Date().getFullYear()
 
+  if (differentDir) {
+    mkdirp.sync(this.data.dir)
+    cd(this.data.dir)
+  }
+
   exec('git init')
 
   templates.forEach(createFileFromTemplate.bind(this))
   createIndex.apply(this)
   createTestDir.apply(this)
-  fixpack(cwp('package.json'), { quiet: true })
+  fixpack(path.resolve('package.json'), { quiet: true })
 
   exec('npm install')
+
+  if (differentDir) cd(cwd)
 
   this.emit('done', this.data)
   return this.cb(null, this.data)
@@ -101,7 +114,7 @@ ModuleInit.prototype.run = function run () {
 function createFileFromTemplate (tpl) {
   if (this.data[tpl.name] === false) return
 
-  var filePath = cwp(tpl.file)
+  var filePath = path.resolve(tpl.file)
 
   if (fs.existsSync(filePath)) {
     return this.emit('warn', tpl.file + ' already exists')
@@ -113,7 +126,7 @@ function createFileFromTemplate (tpl) {
 }
 
 function createIndex () {
-  var filePath = cwp('index.js')
+  var filePath = path.resolve('index.js')
 
   if (fs.existsSync(filePath)) {
     return this.emit('warn', 'index.js already exists')
@@ -124,8 +137,8 @@ function createIndex () {
 }
 
 function createTestDir () {
-  var dirPath = cwp('test')
-  var filePath = cwp('test/index.js')
+  var dirPath = path.resolve('test')
+  var filePath = path.resolve('test/index.js')
 
   if (fs.existsSync(filePath)) {
     return this.emit('warn', 'test/index.js already exists')

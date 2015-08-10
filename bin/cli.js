@@ -9,6 +9,11 @@ var canHazPackage = require('can-haz-package')
 
 var clopts = require('cliclopts')([
   {
+    name: 'dir',
+    abbr: 'd',
+    help: 'specify module directory (default: cwd)'
+  },
+  {
     name: 'version',
     abbr: 'v',
     boolean: true,
@@ -36,7 +41,6 @@ if (argv.version) {
 if (argv.help) {
   console.log('Usage: module-init [options]')
   clopts.print()
-  console.log('Run without arguments for interactive mode')
   process.exit(0)
 }
 
@@ -69,7 +73,7 @@ var questions = [{
   type: 'input',
   name: 'pkgName',
   message: 'name',
-  default: path.basename(process.cwd()),
+  default: argv.dir || path.basename(process.cwd()),
   validate: canHazPackage
 },
   {
@@ -114,6 +118,7 @@ inquirer.prompt(questions, function (data) {
   data.usrEmail = config.user.email
   data.usrGithub = config.github.user
 
+  if (argv.dir) data.dir = argv.dir
   if (!data.pkgDescription) data.pkgDescription = ''
   if (data.pkgKeywords !== '') {
     data.pkgKeywords = data.pkgKeywords

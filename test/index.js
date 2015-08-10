@@ -1,17 +1,21 @@
 var moduleInit = require('..')
 var test = require('tape')
+var rimraf = require('rimraf')
+var fs = require('fs')
+var path = require('path')
 var util = require('util')
 var d = Date.now()
 var testData = {
   pkgName: util.format('tmp-%s', d),
   pkgDescription: 'desc',
   pkgLicense: 'ISC',
-  pkgContributing: 'Open-2',
+  pkgContributing: true,
   pkgLinter: 'standard',
   usrName: 'BOB',
   usrEmail: 'BOB@hotmail.com',
   usrGithub: 'BOB',
-  usrNpm: 'BOB'
+  usrNpm: 'BOB',
+  dir: 'test/dummy-module'
 }
 var badData = {
   pkgName: util.format('tmp-%s', d),
@@ -22,7 +26,8 @@ var badData = {
   usrName: 'BOB',
   usrEmail: 'BOB@hotmail.com',
   usrGithub: 'BOB',
-  usrNpm: 'BOB'
+  usrNpm: 'BOB',
+  dir: 'test/dummy-module'
 }
 
 test('emit err on missing option', function (t) {
@@ -33,7 +38,7 @@ test('emit err on missing option', function (t) {
   moduleInit()
     .on('err', function (err) {
       var match = err.message.match('missing required options: ' + required)
-      t.ok(match, 'returned missing options')
+      t.ok(match, 'returned missing required options: ' + required)
       t.end()
     })
     .run()
@@ -47,21 +52,32 @@ test('emit err on invalid option', function (t) {
   moduleInit(badData)
     .on('err', function (err) {
       var match = err.message.match('invalid options: ' + invalid)
-      t.ok(match, 'returned invalid options')
+      t.ok(match, 'returned invalid options: ' + invalid)
       t.end()
     })
     .run()
 })
 
-test.skip('create things as expected', function (t) {
-  t.plan(1)
-
+test('create things as expected', function (t) {
   moduleInit(testData)
+    .on('create', function (file) {
+      // file created
+      console.log(file + ' created')
+    })
+    .on('warn', function (msg) {
+      console.log(msg)
+    })
     .on('err', function (err) {
-      throw err
+      t.error(err, 'did not error')
     })
     .on('done', function (res) {
-      t.ok(res)
+      console.log(res.pkgName + ' initialized')
+      var file = path.resolve('test/dummy-module/package.json')
+      var exists = fs.existsSync(file)
+      console.log(file, exists)
+      t.ok(res, 'got response')
+      t.ok(exists, 'directory exists')
+      rimraf.sync('test/dummy-module')
       t.end()
     })
     .run()

@@ -5,6 +5,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 * Remove errant newline in ISC template ([#22](https://github.com/ngoldman/module-init/pull/22))
+* Add `dir` option to specify directory
+* Fix missing `pkgVersion` default
 
 ## 1.2.1 - 2015-08-05
 * Change `LICENSE.md` to `LICENSE` in all the places
