@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Unreleased
+## 1.3.0 - 2015-08-10
 * Remove errant newline in ISC template ([#22](https://github.com/ngoldman/module-init/pull/22))
 * Add `dir` option to specify directory
 * Fix missing `pkgVersion` default
