@@ -1,4 +1,4 @@
-var mustache = require('micromustache')
+var mustache = require('mustache')
 var path = require('path')
 var fs = require('fs')
 
