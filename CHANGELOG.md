@@ -5,6 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 * hide contributing section if no pkgContributing ([#24](https://github.com/ngoldman/module-init/pull/24))
+* default to stable node for `.travis.yml`
 
 ## 1.3.0 - 2015-08-10
 * Remove errant newline in ISC template ([#22](https://github.com/ngoldman/module-init/pull/22))
