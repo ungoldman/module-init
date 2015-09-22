@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Unreleased
+## [1.3.2] - 2015-09-22
 * remove can-haz-package from dependencies (oops)
 * fix bad reference to `package.json`
 
@@ -113,4 +113,5 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## 0.1.0
 * working draft
 
+[1.3.2]: https://github.com/ngoldman/module-init/compare/v1.3.1...v1.3.2
 [1.3.1]: https://github.com/ngoldman/module-init/compare/v1.3.0...v1.3.1
