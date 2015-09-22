@@ -3,6 +3,9 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Unreleased
+* remove can-haz-package from dependencies (oops)
+
 ## [1.3.1] - 2015-09-22
 * hide contributing section if no pkgContributing ([#24](https://github.com/ngoldman/module-init/pull/24))
 * default to stable node for `.travis.yml`
