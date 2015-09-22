@@ -5,7 +5,6 @@ var path = require('path')
 var chalk = require('chalk')
 var config = require('git-config').sync()
 var inquirer = require('inquirer')
-var canHazPackage = require('can-haz-package')
 
 var clopts = require('cliclopts')([
   {
@@ -73,8 +72,7 @@ var questions = [{
   type: 'input',
   name: 'pkgName',
   message: 'name',
-  default: argv.dir || path.basename(process.cwd()),
-  validate: canHazPackage
+  default: argv.dir || path.basename(process.cwd())
 },
   {
     type: 'input',
