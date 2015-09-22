@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Unreleased
+## [1.3.1] - 2015-09-22
 * hide contributing section if no pkgContributing ([#24](https://github.com/ngoldman/module-init/pull/24))
 * default to stable node for `.travis.yml`
 * remove can-haz-package validation due to issue ([#23](https://github.com/ngoldman/module-init/issues/23))
@@ -108,3 +108,5 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 0.1.0
 * working draft
+
+[1.3.1]: https://github.com/ngoldman/module-init/compare/v1.3.0...v1.3.1
