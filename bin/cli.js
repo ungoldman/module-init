@@ -33,7 +33,7 @@ var argv = require('minimist')(process.argv.slice(2), {
 var errs = 0
 
 if (argv.version) {
-  console.log(require('../package').version)
+  console.log(require(path.join(__dirname, 'package.json')).version)
   process.exit(0)
 }
 
