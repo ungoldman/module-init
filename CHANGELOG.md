@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Unreleased
+## [1.3.3] - 2015-09-30
 * add 0.10 and 0.12 back to travis
 * remove redundant `script` section of travis (default is already `npm test`)
 
@@ -117,5 +117,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## 0.1.0
 * working draft
 
+[1.3.3]: https://github.com/ngoldman/module-init/compare/v1.3.2...v1.3.3
 [1.3.2]: https://github.com/ngoldman/module-init/compare/v1.3.1...v1.3.2
 [1.3.1]: https://github.com/ngoldman/module-init/compare/v1.3.0...v1.3.1
