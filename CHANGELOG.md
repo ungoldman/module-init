@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Unreleased
+* add 0.10 and 0.12 back to travis
+* remove redundant `script` section of travis (default is already `npm test`)
+
 ## [1.3.2] - 2015-09-22
 * remove can-haz-package from dependencies (oops)
 * fix bad reference to `package.json`
