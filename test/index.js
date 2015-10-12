@@ -12,6 +12,7 @@ var testData = {
   pkgDescription: 'desc',
   pkgLicense: 'ISC',
   pkgContributing: true,
+  pkgKeywords: '"hello", "world"',
   pkgLinter: 'standard',
   usrName: 'BOB',
   usrEmail: 'BOB@hotmail.com',
