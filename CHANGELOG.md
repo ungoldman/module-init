@@ -3,6 +3,9 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Unreleased
+* fix --version flag ([#28](https://github.com/ngoldman/module-init/pull/28))
+
 ## [1.3.3] - 2015-09-30
 * add 0.10 and 0.12 back to travis
 * remove redundant `script` section of travis (default is already `npm test`)
