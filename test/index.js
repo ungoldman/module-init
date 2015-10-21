@@ -12,6 +12,7 @@ var testData = {
   pkgDescription: 'desc',
   pkgLicense: 'ISC',
   pkgContributing: true,
+  pkgKeywords: '"hello", "world"',
   pkgLinter: 'standard',
   usrName: 'BOB',
   usrEmail: 'BOB@hotmail.com',
@@ -77,6 +78,8 @@ test('create things as expected', function (t) {
       var file = path.resolve('test/dummy-module/package.json')
       var exists = fs.existsSync(file)
       console.log(file, exists)
+      var pkgJson = require(file)
+      t.deepEquals(pkgJson.keywords, ['hello', 'world'], 'keywords in package.json are correct')
       t.ok(res, 'got response')
       t.ok(exists, 'directory exists')
       rimraf.sync('test/dummy-module')
