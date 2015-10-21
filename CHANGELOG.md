@@ -5,6 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 * fix --version flag ([#28](https://github.com/ngoldman/module-init/pull/28))
+* fix keywords being escaped ([#29](https://github.com/ngoldman/module-init/pull/29))
 
 ## [1.3.3] - 2015-09-30
 * add 0.10 and 0.12 back to travis
