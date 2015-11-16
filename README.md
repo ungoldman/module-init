@@ -23,12 +23,12 @@ Command-line tool to quickly create a new node module with readme, license, cont
 * creates `package.json` with all standard fields filled out
   * adds code style linter ([`standard`](https://github.com/feross/standard) or [`semistandard`](https://github.com/Flet/semistandard)) to `devDependencies`
   * adds [`tape`](https://github.com/substack/tape) & [`tap-spec`](https://github.com/scottcorgan/tap-spec) to `devDependencies`
-  * sets up test script
+  * sets up `npm test` script
   * runs [`fixpack`](https://github.com/HenrikJoreteg/fixpack)
 * creates `.travis.yml` w/ [docker support enabled](http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure/) & [node_modules cached](http://blog.travis-ci.com/2013-12-05-speed-up-your-builds-cache-your-dependencies/)
 * creates `.gitignore` w/ `node_modules` ignored
-* creates a blank `index.js`
-* creates a blank `test/index.js`
+* creates a blank `index.js` file
+* creates a boilerplate `test/index.js` file
 * runs `npm install`
 
 **todo**
