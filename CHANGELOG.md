@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Unreleased
+## [1.3.5] - 2015-11-15
 * add codes style badges to READMEs ([#30](https://github.com/ngoldman/module-init/pull/30))
 * move linting to the end of the test chain ([#31](https://github.com/ngoldman/module-init/pull/31))
 * Include example test in test/index.js ([#14](https://github.com/ngoldman/module-init/issues/14))
@@ -126,6 +126,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## 0.1.0
 * working draft
 
+[1.3.5]: https://github.com/ngoldman/module-init/compare/v1.3.4...v1.3.5
 [1.3.4]: https://github.com/ngoldman/module-init/compare/v1.3.3...v1.3.4
 [1.3.3]: https://github.com/ngoldman/module-init/compare/v1.3.2...v1.3.3
 [1.3.2]: https://github.com/ngoldman/module-init/compare/v1.3.1...v1.3.2
