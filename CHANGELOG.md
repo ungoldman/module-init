@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Unreleased
+* add codes style badges to READMEs ([#30](https://github.com/ngoldman/module-init/pull/30))
+* move linting to the end of the test chain ([#31](https://github.com/ngoldman/module-init/pull/31))
+
 ## [1.3.4] - 2015-10-20
 * fix --version flag ([#28](https://github.com/ngoldman/module-init/pull/28))
 * fix keywords being escaped ([#29](https://github.com/ngoldman/module-init/pull/29))
