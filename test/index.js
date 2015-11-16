@@ -18,7 +18,7 @@ var testData = {
   usrEmail: 'BOB@hotmail.com',
   usrGithub: 'BOB',
   usrNpm: 'BOB',
-  dir: 'test/dummy-module',
+  dir: 'test/' + util.format('tmp-%s', d),
   gitInit: false,
   npmInstall: false
 }
@@ -77,14 +77,15 @@ test('create things as expected', function (t) {
     })
     .on('done', function (res) {
       console.log(res.pkgName + ' initialized')
-      var file = path.resolve('test/dummy-module/package.json')
+      var file = path.resolve(testData.dir, 'package.json')
       var exists = fs.existsSync(file)
       console.log(file, exists)
       var pkgJson = require(file)
       t.deepEquals(pkgJson.keywords, ['hello', 'world'], 'keywords in package.json are correct')
       t.ok(res, 'got response')
       t.ok(exists, 'directory exists')
-      rimraf.sync('test/dummy-module')
+      console.log('deleting %s', testData.dir)
+      rimraf.sync(testData.dir)
       t.end()
     })
     .run()
@@ -95,6 +96,21 @@ test('CLI --version flag works correctly', function (t) {
 
   version.on('close', function (code) {
     t.equals(code, 0, 'should return error code 0 (success)')
+    t.end()
+  })
+})
+
+test('CLI --dir flag works correctly', function (t) {
+  var testDir = 'test/' + util.format('tmp-%s/abc/xyz', d)
+  var dir = spawn(path.join(__dirname, '../bin/cli.js'), ['-d', testDir, '-f'], {stdio: 'inherit'})
+
+  dir.on('close', function (code) {
+    t.equals(code, 0, 'should return error code 0 (success)')
+    var file = path.resolve(testDir, 'package.json')
+    var exists = fs.existsSync(file)
+    t.ok(exists, 'directory exists')
+    console.log('deleting %s', testDir)
+    rimraf.sync(testDir)
     t.end()
   })
 })
