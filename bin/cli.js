@@ -95,9 +95,11 @@ var questions = [
   }
 ]
 
-if (argv.force) return force()
-
-prompt()
+if (argv.force) {
+  force()
+} else {
+  prompt()
+}
 
 function catchInputErrors () {
   var errs = 0
