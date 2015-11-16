@@ -46,6 +46,6 @@
     "url": "https://github.com/ngoldman/module-init.git"
   },
   "scripts": {
-    "test": "standard && tape test/*.js | tap-spec"
+    "test": "tape test/*.js | tap-spec && standard"
   }
 }
