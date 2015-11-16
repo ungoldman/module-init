@@ -5,7 +5,6 @@ var path = require('path')
 var chalk = require('chalk')
 var config = require('git-config').sync()
 var inquirer = require('inquirer')
-
 var clopts = require('cliclopts')([
   {
     name: 'dir',
@@ -19,6 +18,12 @@ var clopts = require('cliclopts')([
     help: 'show version information'
   },
   {
+    name: 'force',
+    abbr: 'f',
+    help: 'skip prompt and init with defaults',
+    boolean: true
+  },
+  {
     name: 'help',
     abbr: 'h',
     help: 'show help',
@@ -30,43 +35,8 @@ var argv = require('minimist')(process.argv.slice(2), {
   boolean: clopts.boolean(),
   default: clopts.default()
 })
-var errs = 0
 
-if (argv.version) {
-  console.log(require(path.resolve(__dirname, '..', 'package.json')).version)
-  process.exit(0)
-}
-
-if (argv.help) {
-  console.log('Usage: module-init [options]')
-  clopts.print()
-  process.exit(0)
-}
-
-if (!config.user ||
-  !config.user.name) {
-  console.log(chalk.red('Missing user name in .gitconfig'))
-  console.log('  Please make sure your name is set, e.g.')
-  console.log('  git config --global user.name "YOUR NAME"')
-  errs++
-}
-
-if (!config.user ||
-  !config.user.email) {
-  console.log(chalk.red('Missing user email in .gitconfig'))
-  console.log('  Please make sure your email is set, e.g.')
-  console.log('  git config --global user.email "YOUR EMAIL"')
-  errs++
-}
-
-if (!config.github || !config.github.user) {
-  console.log(chalk.red('Missing github user in .gitconfig'))
-  console.log('  Please make sure your github username is set, e.g.')
-  console.log('  git config --global github.user "YOUR USERNAME"')
-  errs++
-}
-
-if (errs) process.exit(1)
+catchInputErrors()
 
 var questions = [
   {
@@ -125,13 +95,78 @@ var questions = [
   }
 ]
 
-inquirer.prompt(questions, function (data) {
+if (argv.force) return force()
+
+prompt()
+
+function catchInputErrors () {
+  var errs = 0
+
+  if (argv.version) {
+    console.log(require(path.resolve(__dirname, '..', 'package.json')).version)
+    process.exit(0)
+  }
+
+  if (argv.help) {
+    console.log('Usage: module-init [options]')
+    clopts.print()
+    process.exit(0)
+  }
+
+  if (!config.user ||
+    !config.user.name) {
+    console.log(chalk.red('Missing user name in .gitconfig'))
+    console.log('  Please make sure your name is set, e.g.')
+    console.log('  git config --global user.name "YOUR NAME"')
+    errs++
+  }
+
+  if (!config.user ||
+    !config.user.email) {
+    console.log(chalk.red('Missing user email in .gitconfig'))
+    console.log('  Please make sure your email is set, e.g.')
+    console.log('  git config --global user.email "YOUR EMAIL"')
+    errs++
+  }
+
+  if (!config.github || !config.github.user) {
+    console.log(chalk.red('Missing github user in .gitconfig'))
+    console.log('  Please make sure your github username is set, e.g.')
+    console.log('  git config --global github.user "YOUR USERNAME"')
+    errs++
+  }
+
+  if (errs) process.exit(1)
+}
+
+function force () {
+  var data = {}
+
+  for (var i = 0; i < questions.length; i++) {
+    if (typeof questions[i].default !== 'undefined') {
+      data[questions[i].name] = questions[i].default
+    }
+  }
+
+  data = prepData(data)
+  init(data)
+}
+
+function prompt () {
+  inquirer.prompt(questions, function (data) {
+    data = prepData(data)
+    init(data)
+  })
+}
+
+function prepData (data) {
   data.usrName = config.user.name
   data.usrEmail = config.user.email
   data.usrGithub = config.github.user
 
   if (argv.dir) data.dir = argv.dir
   if (!data.pkgDescription) data.pkgDescription = ''
+  if (!data.pkgKeywords) data.pkgKeywords = ''
   if (data.pkgKeywords !== '') {
     data.pkgKeywords = data.pkgKeywords
       .split(/[\s,]+/)
@@ -144,6 +179,10 @@ inquirer.prompt(questions, function (data) {
       .join(', ')
   }
 
+  return data
+}
+
+function init (data) {
   moduleInit(data)
     .on('create', function (file) {
       // file created
@@ -164,4 +203,4 @@ inquirer.prompt(questions, function (data) {
       process.exit(0)
     })
     .run() // run the thing
-})
+}
