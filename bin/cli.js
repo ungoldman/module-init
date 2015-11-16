@@ -43,7 +43,7 @@ var questions = [
     type: 'input',
     name: 'pkgName',
     message: 'name',
-    default: argv.dir || path.basename(process.cwd())
+    default: path.basename(argv.dir || process.cwd())
   },
   {
     type: 'input',
@@ -188,11 +188,11 @@ function init (data) {
   moduleInit(data)
     .on('create', function (file) {
       // file created
-      console.warn(chalk.green('✓ ') + chalk.bold(file) + ' created')
+      console.log(chalk.green('✓ ') + chalk.bold(file) + ' created')
     })
     .on('warn', function (msg) {
       // something weird happened
-      console.warn(chalk.yellow('✗ ' + msg))
+      console.log(chalk.yellow('✗ ' + msg))
     })
     .on('err', function (err) {
       // something went horribly wrong!
