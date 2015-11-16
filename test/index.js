@@ -18,7 +18,9 @@ var testData = {
   usrEmail: 'BOB@hotmail.com',
   usrGithub: 'BOB',
   usrNpm: 'BOB',
-  dir: 'test/dummy-module'
+  dir: 'test/dummy-module',
+  gitInit: false,
+  npmInstall: false
 }
 var badData = {
   pkgName: util.format('tmp-%s', d),
