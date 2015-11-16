@@ -99,6 +99,12 @@ var questions = [
     default: 'ISC'
   },
   {
+    type: 'confirm',
+    name: 'pkgContributing',
+    message: 'contributing',
+    default: true
+  },
+  {
     type: 'list',
     name: 'pkgLinter',
     message: 'linter',
