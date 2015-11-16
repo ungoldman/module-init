@@ -49,9 +49,9 @@ $ module-init --help
 Usage: module-init [options]
     --dir, -d             specify module directory (default: cwd)
     --version, -v         show version information
+    --force, -f           skip prompt and init with defaults
     --help, -h            show help
-$ mkdir new-project && cd new-project
-$ module-init
+$ module-init -d new-project
 ? name: new-project
 ? version: 1.0.0
 ? description:
@@ -59,6 +59,8 @@ $ module-init
 ? license: ISC
 ? contributing: Yes
 ? linter: standard
+? git init: Yes
+? npm install: Yes
 Initialized empty Git repository in /Users/yourname/new-project/.git/
 ✓ .gitignore created
 ✓ .travis.yml created
