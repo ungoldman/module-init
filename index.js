@@ -98,9 +98,9 @@ ModuleInit.prototype.run = function run () {
 
   exec('git init')
 
-  templates.forEach(createFileFromTemplate.bind(this))
   createIndex.apply(this)
   createTestDir.apply(this)
+  templates.forEach(createFileFromTemplate.bind(this))
   fixpack(path.resolve('package.json'), { quiet: true })
 
   exec('npm install')
@@ -138,16 +138,13 @@ function createIndex () {
 
 function createTestDir () {
   var dirPath = path.resolve('test')
-  var filePath = path.resolve('test/index.js')
 
-  if (fs.existsSync(filePath)) {
-    return this.emit('warn', 'test/index.js already exists')
+  if (fs.existsSync(dirPath)) {
+    return this.emit('warn', 'test/ already exists')
   }
 
-  if (!fs.existsSync(dirPath)) fs.mkdirSync(dirPath)
-
-  fs.writeFileSync(filePath, '\n')
-  this.emit('create', 'test/index.js')
+  fs.mkdirSync(dirPath)
+  this.emit('create', 'test/')
 }
 
 module.exports = ModuleInit
