@@ -23,10 +23,12 @@ var OPTIONS = {
   },
   defaults: {
     'dir': process.cwd(),
+    'gitInit': true,
     'pkgContributing': true,
     'pkgLicense': 'ISC',
     'pkgLinter': 'standard',
-    'pkgVersion': '1.0.0'
+    'pkgVersion': '1.0.0',
+    'npmInstall': true
   }
 }
 
@@ -96,14 +98,14 @@ ModuleInit.prototype.run = function run () {
     cd(this.data.dir)
   }
 
-  exec('git init')
+  if (this.data.gitInit) exec('git init')
 
   createIndex.apply(this)
   createTestDir.apply(this)
   templates.forEach(createFileFromTemplate.bind(this))
   fixpack(path.resolve('package.json'), { quiet: true })
 
-  exec('npm install')
+  if (this.data.npmInstall) exec('npm install')
 
   if (differentDir) cd(cwd)
 

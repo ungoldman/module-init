@@ -3,6 +3,9 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Unreleased
+* make npm install & git init optional ([#33](https://github.com/ngoldman/module-init/issues/33))
+
 ## [1.3.5] - 2015-11-15
 * add codes style badges to READMEs ([#30](https://github.com/ngoldman/module-init/pull/30))
 * move linting to the end of the test chain ([#31](https://github.com/ngoldman/module-init/pull/31))

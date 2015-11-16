@@ -68,12 +68,13 @@ if (!config.github || !config.github.user) {
 
 if (errs) process.exit(1)
 
-var questions = [{
-  type: 'input',
-  name: 'pkgName',
-  message: 'name',
-  default: argv.dir || path.basename(process.cwd())
-},
+var questions = [
+  {
+    type: 'input',
+    name: 'pkgName',
+    message: 'name',
+    default: argv.dir || path.basename(process.cwd())
+  },
   {
     type: 'input',
     name: 'pkgVersion',
@@ -98,18 +99,25 @@ var questions = [{
     default: 'ISC'
   },
   {
-    type: 'confirm',
-    name: 'pkgContributing',
-    message: 'contributing',
-    default: true
-  },
-  {
     type: 'list',
     name: 'pkgLinter',
     message: 'linter',
     choices: ['standard', 'semistandard'],
     default: 'standard'
-  }]
+  },
+  {
+    type: 'confirm',
+    name: 'gitInit',
+    message: 'git init',
+    default: true
+  },
+  {
+    type: 'confirm',
+    name: 'npmInstall',
+    message: 'npm install',
+    default: true
+  }
+]
 
 inquirer.prompt(questions, function (data) {
   data.usrName = config.user.name
