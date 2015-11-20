@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 * make npm install & git init optional ([#33](https://github.com/ngoldman/module-init/issues/33))
 * add `--force` option to skip prompt and init with defaults
+* fix package name default when `--dir` cli option is a nested path
 
 ## [1.3.5] - 2015-11-15
 * add codes style badges to READMEs ([#30](https://github.com/ngoldman/module-init/pull/30))
