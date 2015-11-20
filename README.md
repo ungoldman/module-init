@@ -15,7 +15,6 @@
 
 Command-line tool to quickly create a new node module with readme, license, contributing guidelines, and other goodies.
 
-* runs `git init`
 * creates `README.md` w/ title, desc, npm & travis badges, install, usage, contributing, & license sections
 * creates `CHANGELOG.md` using [keepachangelog](http://keepachangelog.com/) style
 * creates `LICENSE` ([ISC](http://opensource.org/licenses/ISC) or [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0))
@@ -29,6 +28,7 @@ Command-line tool to quickly create a new node module with readme, license, cont
 * creates a blank `index.js` file
 * creates a boilerplate `test/index.js` file
 * optionally creates `CONTRIBUTING.md` using [ngoldman/contributing](https://github.com/ngoldman/contributing) boilerplate
+* optionally runs `git init`
 * optionally runs `npm install`
 
 ## Install
