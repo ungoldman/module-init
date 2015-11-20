@@ -31,11 +31,6 @@ Command-line tool to quickly create a new node module with readme, license, cont
 * creates a boilerplate `test/index.js` file
 * runs `npm install`
 
-**todo**
-
-* create repo on github (optional, requires auth)
-* add travis hook w/ [`travisjs`](https://github.com/finnp/node-travisjs) (optional, requires auth)
-
 ## Install
 
 ```
