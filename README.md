@@ -18,7 +18,6 @@ Command-line tool to quickly create a new node module with readme, license, cont
 * runs `git init`
 * creates `README.md` w/ title, desc, npm & travis badges, install, usage, contributing, & license sections
 * creates `CHANGELOG.md` using [keepachangelog](http://keepachangelog.com/) style
-* creates `CONTRIBUTING.md` using [ngoldman/contributing](https://github.com/ngoldman/contributing) boilerplate
 * creates `LICENSE` ([ISC](http://opensource.org/licenses/ISC) or [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0))
 * creates `package.json` with all standard fields filled out
   * adds code style linter ([`standard`](https://github.com/feross/standard) or [`semistandard`](https://github.com/Flet/semistandard)) to `devDependencies`
@@ -29,7 +28,8 @@ Command-line tool to quickly create a new node module with readme, license, cont
 * creates `.gitignore` w/ `node_modules` ignored
 * creates a blank `index.js` file
 * creates a boilerplate `test/index.js` file
-* runs `npm install`
+* optionally creates `CONTRIBUTING.md` using [ngoldman/contributing](https://github.com/ngoldman/contributing) boilerplate
+* optionally runs `npm install`
 
 ## Install
 
