@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Unreleased
+## [1.3.6] - 2015-11-19
 * make npm install & git init optional ([#33](https://github.com/ngoldman/module-init/issues/33))
 * add `--force` option to skip prompt and init with defaults
 * fix package name default when `--dir` cli option is a nested path
@@ -131,6 +131,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## 0.1.0
 * working draft
 
+[1.3.6]: https://github.com/ngoldman/module-init/compare/v1.3.5...v1.3.6
 [1.3.5]: https://github.com/ngoldman/module-init/compare/v1.3.4...v1.3.5
 [1.3.4]: https://github.com/ngoldman/module-init/compare/v1.3.3...v1.3.4
 [1.3.3]: https://github.com/ngoldman/module-init/compare/v1.3.2...v1.3.3
