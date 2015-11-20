@@ -15,7 +15,9 @@
 
 Command-line tool to quickly create a new node module with readme, license, contributing guidelines, and other goodies.
 
-* creates `README.md` w/ title, description, some tasteful badges (version, build status, code style), install, usage, contributing, & license sections
+* creates `README.md`
+  * includes title, description, and some tasteful badges (version, build status, code style)
+  * auto-populates install, usage, contributing, and license sections with relevant info
 * creates `CHANGELOG.md` using [keepachangelog](http://keepachangelog.com/) style
 * creates `LICENSE` ([ISC](http://opensource.org/licenses/ISC) or [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0))
 * creates `package.json` with all standard fields filled out
