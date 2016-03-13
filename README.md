@@ -8,8 +8,8 @@
 
 [npm-image]: https://img.shields.io/npm/v/module-init.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/module-init
-[travis-image]: https://img.shields.io/travis/ngoldman/module-init.svg?style=flat-square
-[travis-url]: https://travis-ci.org/ngoldman/module-init
+[travis-image]: https://img.shields.io/travis/ungoldman/module-init.svg?style=flat-square
+[travis-url]: https://travis-ci.org/ungoldman/module-init
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
 [standard-url]: http://standardjs.com/
 
@@ -29,7 +29,7 @@ Command-line tool to quickly create a new node module with readme, license, cont
 * creates `.gitignore` w/ `node_modules` ignored
 * creates a blank `index.js` file
 * creates a boilerplate `test/index.js` file
-* optionally creates `CONTRIBUTING.md` using [ngoldman/contributing](https://github.com/ngoldman/contributing) boilerplate
+* optionally creates `CONTRIBUTING.md` using [ungoldman/contributing](https://github.com/ungoldman/contributing) boilerplate
 * optionally runs `git init`
 * optionally runs `npm install`
 
@@ -136,7 +136,7 @@ Contributions welcome! Please read the [contributing guidelines](CONTRIBUTING.md
 
 <table><tbody><tr><th align="left">bcomnes</th><td><a href="https://github.com/bcomnes">GitHub/bcomnes</a></td></tr>
 <tr><th align="left">Flet</th><td><a href="https://github.com/Flet">GitHub/Flet</a></td></tr>
-<tr><th align="left">ngoldman</th><td><a href="https://github.com/ngoldman">GitHub/ngoldman</a></td></tr>
+<tr><th align="left">ungoldman</th><td><a href="https://github.com/ungoldman">GitHub/ungoldman</a></td></tr>
 <tr><th align="left">paulcpederson</th><td><a href="https://github.com/paulcpederson">GitHub/paulcpederson</a></td></tr>
 </tbody></table>
 
