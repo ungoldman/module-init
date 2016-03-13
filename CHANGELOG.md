@@ -4,18 +4,18 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.3.6] - 2015-11-19
-* make npm install & git init optional ([#33](https://github.com/ngoldman/module-init/issues/33))
+* make npm install & git init optional ([#33](https://github.com/ungoldman/module-init/issues/33))
 * add `--force` option to skip prompt and init with defaults
 * fix package name default when `--dir` cli option is a nested path
 
 ## [1.3.5] - 2015-11-15
-* add codes style badges to READMEs ([#30](https://github.com/ngoldman/module-init/pull/30))
-* move linting to the end of the test chain ([#31](https://github.com/ngoldman/module-init/pull/31))
-* Include example test in test/index.js ([#14](https://github.com/ngoldman/module-init/issues/14))
+* add codes style badges to READMEs ([#30](https://github.com/ungoldman/module-init/pull/30))
+* move linting to the end of the test chain ([#31](https://github.com/ungoldman/module-init/pull/31))
+* Include example test in test/index.js ([#14](https://github.com/ungoldman/module-init/issues/14))
 
 ## [1.3.4] - 2015-10-20
-* fix --version flag ([#28](https://github.com/ngoldman/module-init/pull/28))
-* fix keywords being escaped ([#29](https://github.com/ngoldman/module-init/pull/29))
+* fix --version flag ([#28](https://github.com/ungoldman/module-init/pull/28))
+* fix keywords being escaped ([#29](https://github.com/ungoldman/module-init/pull/29))
 
 ## [1.3.3] - 2015-09-30
 * add 0.10 and 0.12 back to travis
@@ -26,13 +26,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 * fix bad reference to `package.json`
 
 ## [1.3.1] - 2015-09-22
-* hide contributing section if no pkgContributing ([#24](https://github.com/ngoldman/module-init/pull/24))
+* hide contributing section if no pkgContributing ([#24](https://github.com/ungoldman/module-init/pull/24))
 * default to stable node for `.travis.yml`
-* remove can-haz-package validation due to issue ([#23](https://github.com/ngoldman/module-init/issues/23))
+* remove can-haz-package validation due to issue ([#23](https://github.com/ungoldman/module-init/issues/23))
 * no errant newlines in readme if description omitted
 
 ## 1.3.0 - 2015-08-10
-* Remove errant newline in ISC template ([#22](https://github.com/ngoldman/module-init/pull/22))
+* Remove errant newline in ISC template ([#22](https://github.com/ungoldman/module-init/pull/22))
 * Add `dir` option to specify directory
 * Fix missing `pkgVersion` default
 
@@ -53,28 +53,28 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## 1.0.1 - 2015-07-01
 
 ### Changed
-* Updated contributing guidelines & template based on changes in [ngoldman/contributing@b1f54df](https://github.com/ngoldman/contributing/commit/b1f54df669d02e1db87598bc07540d823b423d4d).
+* Updated contributing guidelines & template based on changes in [ngoldman/contributing@b1f54df](https://github.com/ungoldman/contributing/commit/b1f54df669d02e1db87598bc07540d823b423d4d).
 
 ### Fixed
-* Use `tap-spec` 4.x to fix rendering issues ([#16](https://github.com/ngoldman/module-init/issues/16))
+* Use `tap-spec` 4.x to fix rendering issues ([#16](https://github.com/ungoldman/module-init/issues/16))
 
 ## 1.0.0 - 2015-06-15
 
 ### Changed
-* Refactored object returned by `templates/index.js` to deal with fix for ([#13](https://github.com/ngoldman/module-init/issues/13))
+* Refactored object returned by `templates/index.js` to deal with fix for ([#13](https://github.com/ungoldman/module-init/issues/13))
 
 ### Fixed
 * remove `pkgContributing` from required list, default to true
-* fix error when selecting 'No' for contributing ([#13](https://github.com/ngoldman/module-init/issues/13))
+* fix error when selecting 'No' for contributing ([#13](https://github.com/ungoldman/module-init/issues/13))
 
 ## 0.3.2
 * use github's [node `.gitignore`](https://github.com/github/gitignore/edit/master/Node.gitignore)
 * improve `CONTRIBUTING.md` to be useful for contributors as well as collaborators
-* switch from `faucet` to `tap-spec` for tap output ([#12](https://github.com/ngoldman/module-init/issues/12))
+* switch from `faucet` to `tap-spec` for tap output ([#12](https://github.com/ungoldman/module-init/issues/12))
 
 ## 0.3.1
-* change `standard` devDep to always use latest ([#7](https://github.com/ngoldman/module-init/issues/7))
-* add linter options ([#8](https://github.com/ngoldman/module-init/issues/8))
+* change `standard` devDep to always use latest ([#7](https://github.com/ungoldman/module-init/issues/7))
+* add linter options ([#8](https://github.com/ungoldman/module-init/issues/8))
 
 ## 0.3.0
 
@@ -95,7 +95,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 0.2.0
 * switch Node API to EventEmitter pattern
-* remove io.js dependency ([#6](https://github.com/ngoldman/module-init/issues/6))
+* remove io.js dependency ([#6](https://github.com/ungoldman/module-init/issues/6))
 * add node 0.10 & 0.12 to travis tests
 * add stability index badge as fair warning
 
@@ -106,7 +106,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 * add implementation table to readme
 
 ## 0.1.4
-* move `.gitconfig` checks before prompt ([#2](https://github.com/ngoldman/module-init/issues/2))
+* move `.gitconfig` checks before prompt ([#2](https://github.com/ungoldman/module-init/issues/2))
 
 ## 0.1.3
 * fix missing module
@@ -131,9 +131,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## 0.1.0
 * working draft
 
-[1.3.6]: https://github.com/ngoldman/module-init/compare/v1.3.5...v1.3.6
-[1.3.5]: https://github.com/ngoldman/module-init/compare/v1.3.4...v1.3.5
-[1.3.4]: https://github.com/ngoldman/module-init/compare/v1.3.3...v1.3.4
-[1.3.3]: https://github.com/ngoldman/module-init/compare/v1.3.2...v1.3.3
-[1.3.2]: https://github.com/ngoldman/module-init/compare/v1.3.1...v1.3.2
-[1.3.1]: https://github.com/ngoldman/module-init/compare/v1.3.0...v1.3.1
+[1.3.6]: https://github.com/ungoldman/module-init/compare/v1.3.5...v1.3.6
+[1.3.5]: https://github.com/ungoldman/module-init/compare/v1.3.4...v1.3.5
+[1.3.4]: https://github.com/ungoldman/module-init/compare/v1.3.3...v1.3.4
+[1.3.3]: https://github.com/ungoldman/module-init/compare/v1.3.2...v1.3.3
+[1.3.2]: https://github.com/ungoldman/module-init/compare/v1.3.1...v1.3.2
+[1.3.1]: https://github.com/ungoldman/module-init/compare/v1.3.0...v1.3.1
