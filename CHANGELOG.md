@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Unreleased
+- add BSD-3-Clause, CC0-1.0, MIT, and UNLICENSED options (resolves #34)
+- go back to using `.md` extension for licenses for better readability on github (reverts e971059)
+- add `private` CLI option
+- update CONTRIBUTING.md
+- move linting back to front of test chain (reverts #31)
+
 ## [1.3.6] - 2015-11-19
 * make npm install & git init optional ([#33](https://github.com/ungoldman/module-init/issues/33))
 * add `--force` option to skip prompt and init with defaults
