@@ -18,7 +18,7 @@ var OPTIONS = {
     'usrGithub'
   ],
   valid: {
-    pkgLicense: ['ISC', 'Apache-2.0'],
+    pkgLicense: ['Apache-2.0', 'BSD-3-Clause', 'CC0-1.0', 'ISC', 'MIT', 'UNLICENSED'],
     pkgLinter: ['standard', 'semistandard']
   },
   defaults: {
@@ -142,7 +142,7 @@ function createTestDir () {
   var dirPath = path.resolve('test')
 
   if (fs.existsSync(dirPath)) {
-    return this.emit('warn', 'test/ already exists')
+    return this.emit('warn', 'test directory already exists')
   }
 
   fs.mkdirSync(dirPath)

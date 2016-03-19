@@ -29,7 +29,7 @@ Command-line tool to quickly create a new node module with readme, license, cont
 * creates `.gitignore` w/ `node_modules` ignored
 * creates a blank `index.js` file
 * creates a boilerplate `test/index.js` file
-* optionally creates `CONTRIBUTING.md` using [ungoldman/contributing](https://github.com/ungoldman/contributing) boilerplate
+* optionally creates `CONTRIBUTING.md` using [ungoldman/CONTRIBUTING.md](https://github.com/ungoldman/CONTRIBUTING.md) boilerplate
 * optionally runs `git init`
 * optionally runs `npm install`
 
@@ -142,4 +142,4 @@ Contributions welcome! Please read the [contributing guidelines](CONTRIBUTING.md
 
 ## License
 
-[ISC](LICENSE)
+[ISC](LICENSE.md)

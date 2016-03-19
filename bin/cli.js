@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var moduleInit = require('..')
+var moduleInit = require('../')
 var path = require('path')
 var chalk = require('chalk')
 var config = require('git-config').sync()
@@ -65,13 +65,19 @@ var questions = [
     type: 'list',
     name: 'pkgLicense',
     message: 'license',
-    choices: ['ISC', 'Apache-2.0'],
+    choices: ['Apache-2.0', 'BSD-3-Clause', 'CC0-1.0', 'ISC', 'MIT', 'UNLICENSED'],
     default: 'ISC'
   },
   {
     type: 'confirm',
+    name: 'private',
+    message: 'private',
+    default: false
+  },
+  {
+    type: 'confirm',
     name: 'pkgContributing',
-    message: 'contributing',
+    message: 'CONTRIBUTING.md',
     default: true
   },
   {
