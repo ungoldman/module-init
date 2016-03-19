@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Unreleased
+## [1.4.0] - 2016-03-18
 - add BSD-3-Clause, CC0-1.0, MIT, and UNLICENSED options (resolves #34)
 - go back to using `.md` extension for licenses for better readability on github (reverts e971059)
 - add `private` CLI option
@@ -138,6 +138,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## 0.1.0
 * working draft
 
+[1.4.0]: https://github.com/ungoldman/module-init/compare/v1.3.6...v1.4.0
 [1.3.6]: https://github.com/ungoldman/module-init/compare/v1.3.5...v1.3.6
 [1.3.5]: https://github.com/ungoldman/module-init/compare/v1.3.4...v1.3.5
 [1.3.4]: https://github.com/ungoldman/module-init/compare/v1.3.3...v1.3.4
