@@ -19,7 +19,7 @@ Command-line tool to quickly create a new node module with readme, license, cont
   * includes title, description, and some tasteful badges (version, build status, code style)
   * auto-populates install, usage, contributing, and license sections with relevant info
 * creates `CHANGELOG.md` using [keepachangelog](http://keepachangelog.com/) style
-* creates `LICENSE` ([ISC](http://opensource.org/licenses/ISC) or [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0))
+* creates `LICENSE.md` (`Apache-2.0`, `BSD-3-Clause`, `CC0-1.0`, `ISC`, `MIT`, or `UNLICENSED`)
 * creates `package.json` with all standard fields filled out
   * adds code style linter ([`standard`](https://github.com/feross/standard) or [`semistandard`](https://github.com/Flet/semistandard)) to `devDependencies`
   * adds [`tape`](https://github.com/substack/tape) & [`tap-spec`](https://github.com/scottcorgan/tap-spec) to `devDependencies`
@@ -54,7 +54,8 @@ $ module-init -d new-project
 ? description:
 ? keywords:
 ? license: ISC
-? contributing: Yes
+? private: No
+? CONTRIBUTING.md: Yes
 ? linter: standard
 ? git init: Yes
 ? npm install: Yes
@@ -97,6 +98,7 @@ var data = {
   pkgContributing: true,            // optional, default: true
   pkgLinter: 'standard',            // optional, default: standard
   pkgLicense: 'ISC',                // optional, default: ISC
+  private: true,                    // optional, default: false (omitted if false)
   dir: 'project-directory'          // optional: default: cwd
 }
 
@@ -136,8 +138,8 @@ Contributions welcome! Please read the [contributing guidelines](CONTRIBUTING.md
 
 <table><tbody><tr><th align="left">bcomnes</th><td><a href="https://github.com/bcomnes">GitHub/bcomnes</a></td></tr>
 <tr><th align="left">Flet</th><td><a href="https://github.com/Flet">GitHub/Flet</a></td></tr>
-<tr><th align="left">ungoldman</th><td><a href="https://github.com/ungoldman">GitHub/ungoldman</a></td></tr>
 <tr><th align="left">paulcpederson</th><td><a href="https://github.com/paulcpederson">GitHub/paulcpederson</a></td></tr>
+<tr><th align="left">ungoldman</th><td><a href="https://github.com/ungoldman">GitHub/ungoldman</a></td></tr>
 </tbody></table>
 
 ## License
