@@ -15,11 +15,12 @@
   "license": "{{pkgLicense}}",
   "keywords": [{{{pkgKeywords}}}],
   "main": "index.js",
+  {{#private}}"private": true,{{/private}}
   "repository": {
     "type": "git",
     "url": "https://github.com/{{usrGithub}}/{{pkgName}}.git"
   },
   "scripts": {
-    "test": "tape test/*.js | tap-spec && {{pkgLinter}}"
+    "test": "{{pkgLinter}} && tape test/*.js | tap-spec"
   }
 }
