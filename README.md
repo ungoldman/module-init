@@ -5,6 +5,7 @@
 [![npm][npm-image]][npm-url]
 [![travis][travis-image]][travis-url]
 [![standard][standard-image]][standard-url]
+[![downloads][downloads-image]][npm-url]
 
 [npm-image]: https://img.shields.io/npm/v/module-init.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/module-init
@@ -12,6 +13,7 @@
 [travis-url]: https://travis-ci.org/ungoldman/module-init
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
 [standard-url]: http://standardjs.com/
+[downloads-image]: https://img.shields.io/npm/dm/module-init.svg?style=flat-square
 
 Command-line tool to quickly create a new node module with readme, license, contributing guidelines, and other goodies.
 
