@@ -76,11 +76,11 @@ test('create things as expected', function (t) {
       t.error(err, 'did not error')
     })
     .on('done', function (res) {
-      console.log(res.pkgName + ' initialized')
       var file = path.resolve(testData.dir, 'package.json')
       var exists = fs.existsSync(file)
-      console.log(file, exists)
       var pkgJson = require(file)
+
+      t.ok(exists, 'package.json exists')
       t.deepEquals(pkgJson.keywords, ['hello', 'world'], 'keywords in package.json are correct')
       t.ok(res, 'got response')
       t.ok(exists, 'directory exists')
