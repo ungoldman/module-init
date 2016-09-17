@@ -15,27 +15,37 @@
 [standard-url]: http://standardjs.com/
 [downloads-image]: https://img.shields.io/npm/dm/module-init.svg?style=flat-square
 
-Command-line tool to quickly create a new node module with readme, license, contributing guidelines, and other goodies.
+## Features
 
-* creates `README.md`
-  * includes title, description, and some tasteful badges (version, build status, code style)
-  * auto-populates install, usage, contributing, and license sections with relevant info
-* creates `CHANGELOG.md` using [keepachangelog](http://keepachangelog.com/) style
-* creates `LICENSE.md` (`Apache-2.0`, `BSD-3-Clause`, `CC0-1.0`, `ISC`, `MIT`, or `UNLICENSED`)
-* creates `package.json` with all standard fields filled out
-  * adds code style linter ([`standard`](https://github.com/feross/standard) or [`semistandard`](https://github.com/Flet/semistandard)) to `devDependencies`
-  * adds [`tape`](https://github.com/substack/tape) & [`tap-spec`](https://github.com/scottcorgan/tap-spec) to `devDependencies`
-  * sets up `npm test` script
-  * runs [`fixpack`](https://github.com/HenrikJoreteg/fixpack)
-* creates `.travis.yml` w/ [docker support enabled](http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure/) & [node_modules cached](http://blog.travis-ci.com/2013-12-05-speed-up-your-builds-cache-your-dependencies/)
-* creates `.gitignore` w/ `node_modules` ignored
-* creates a blank `index.js` file
-* creates a boilerplate `test/index.js` file
-* optionally creates `CONTRIBUTING.md` using [ungoldman/CONTRIBUTING.md](https://github.com/ungoldman/CONTRIBUTING.md) boilerplate
-* optionally runs `git init`
-* optionally runs `npm install`
+`module-init` is a command-line tool for generating a new node module.
 
-Based on recommendations from the article ["Be a Good Open Source Shepherd"](ungoldman.com/articles/be-a-good-open-source-shepherd/).
+The following list of files are created based on user input:
+
+- **README.md**
+  - Automatically generates title, description, and some tasteful badges (version, build status, code style).
+  - Auto-populates install, usage, contributing, and license sections with relevant info.
+- **LICENSE.md**
+  - Options: `Apache-2.0`, `BSD-3-Clause`, `CC0-1.0`, `ISC`, `MIT`, `UNLICENSED`.
+- **CHANGELOG.md**
+  - Uses [Keep a Changelog](http://keepachangelog.com/) style.
+- **CONTRIBUTING.md**
+  - Optionally generates contributing guidelines based on [CONTRIBUTING.md](https://github.com/ungoldman/CONTRIBUTING.md) boilerplate.
+- **package.json**
+  - Fills out all standard fields.
+  - Adds code style linter ([`standard`](https://github.com/feross/standard) or [`semistandard`](https://github.com/Flet/semistandard)) to `devDependencies`.
+  - Adds [`tape`](https://github.com/substack/tape) & [`tap-spec`](https://github.com/scottcorgan/tap-spec) to `devDependencies`.
+  - Sets up `npm test` script.
+  - Runs [`fixpack`](https://github.com/HenrikJoreteg/fixpack).
+- **.travis.yml**
+  - Covers all major node versions in use: `0.10`, `0.12`, `4`, `5`, `6`.
+- **.gitignore**
+  - Ignores `node_modules` directory.
+- **index.js**
+  - A blank module entry point file.
+- **test/index.js**
+  - A boilerplate test file using [`tape`](https://github.com/substack/tape).
+
+Optionally runs `git init` and `npm install` in the new module directory.
 
 ## Install
 
@@ -45,6 +55,8 @@ npm install module-init -g
 
 ## Usage
 
+### CLI
+
 ```
 $ module-init --help
 Usage: module-init [options]
@@ -52,7 +64,12 @@ Usage: module-init [options]
     --version, -v         show version information
     --force, -f           skip prompt and init with defaults
     --help, -h            show help
-$ module-init -d new-project
+```
+
+#### Example
+
+```
+~ $ module-init -d new-project
 ? name: new-project
 ? version: 1.0.0
 ? description:
@@ -82,7 +99,7 @@ standard@5.0.2 node_modules/standard
 ✓ new-project initialized
 ```
 
-## Node API
+### Node API
 
 `module-init` can also be required as a regular node module.
 
@@ -91,7 +108,7 @@ Configuration properties from other sources (`.gitconfig`, current working direc
 ```js
 var moduleInit = require('module-init')
 
-var data = {
+var options = {
   pkgName: 'cool-package',          // required
   pkgVersion: '1.0.0',              // required
   usrName: 'Your Name',             // required
@@ -106,17 +123,22 @@ var data = {
   dir: 'project-directory'          // optional: default: cwd
 }
 
-moduleInit(data)
-  .on('create', function (file) {
+moduleInit(options)
+  .on('create', function (filename) {
+    console.log(`${filename} created`)
     // file created
   })
   .on('warn', function (message) {
+    console.log(`warning: ${message}`)
     // something weird but non-critical happened
   })
   .on('err', function (err) {
+    console.error(err)
+    process.exit(1)
     // something went horribly wrong! stop everything!
   })
-  .on('done', function (data) {
+  .on('done', function (result) {
+    console.log(result) // object containing module metadata
     // done!
   })
   .run() // run the thing
@@ -150,6 +172,7 @@ Contributions welcome! Please read the [contributing guidelines](CONTRIBUTING.md
 
 ## See Also
 
+- [Be a Good Open Source Shepherd](http://ungoldman.com/articles/be-a-good-open-source-shepherd/)
 - [init-module](https://github.com/ungoldman/init-module)
 
 ## License
