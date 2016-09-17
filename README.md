@@ -35,6 +35,8 @@ Command-line tool to quickly create a new node module with readme, license, cont
 * optionally runs `git init`
 * optionally runs `npm install`
 
+Based on recommendations from the article ["Be a Good Open Source Shepherd"](ungoldman.com/articles/be-a-good-open-source-shepherd/).
+
 ## Install
 
 ```
@@ -138,11 +140,17 @@ Contributions welcome! Please read the [contributing guidelines](CONTRIBUTING.md
 
 `module-init` is only possible due to the excellent work of the following collaborators:
 
-<table><tbody><tr><th align="left">bcomnes</th><td><a href="https://github.com/bcomnes">GitHub/bcomnes</a></td></tr>
-<tr><th align="left">Flet</th><td><a href="https://github.com/Flet">GitHub/Flet</a></td></tr>
-<tr><th align="left">paulcpederson</th><td><a href="https://github.com/paulcpederson">GitHub/paulcpederson</a></td></tr>
-<tr><th align="left">ungoldman</th><td><a href="https://github.com/ungoldman">GitHub/ungoldman</a></td></tr>
-</tbody></table>
+<table>
+  <tbody><tr><th align="left">bcomnes</th><td><a href="https://github.com/bcomnes">GitHub/bcomnes</a></td></tr>
+  <tr><th align="left">Flet</th><td><a href="https://github.com/Flet">GitHub/Flet</a></td></tr>
+  <tr><th align="left">paulcpederson</th><td><a href="https://github.com/paulcpederson">GitHub/paulcpederson</a></td></tr>
+  <tr><th align="left">ungoldman</th><td><a href="https://github.com/ungoldman">GitHub/ungoldman</a></td></tr>
+  </tbody>
+</table>
+
+## See Also
+
+- [init-module](https://github.com/ungoldman/init-module)
 
 ## License
 
