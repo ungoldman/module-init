@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## Unreleased
 - update `.travis.yml` template with more recent node versions
 - update `CHANGELOG.md` template
+- add scripts for generating a gh-pages site
 
 ## [1.4.0] - 2016-03-18
 - add BSD-3-Clause, CC0-1.0, MIT, and UNLICENSED options (resolves #34)
