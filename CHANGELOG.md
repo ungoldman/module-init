@@ -4,10 +4,10 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
-- update `.travis.yml` template with more recent node versions
-- update `CHANGELOG.md` template
-- add scripts for generating a gh-pages site
-- move description up in `README.md` template
+- templates: `.travis.yml`: drop `0.10`, `0.12`, `5`
+- templates: `CHANGELOG.md`: update header language
+- templates: `README.md`: move project description up
+- site: add scripts for generating a gh-pages site
 
 ## [1.4.0] - 2016-03-18
 - add BSD-3-Clause, CC0-1.0, MIT, and UNLICENSED options (resolves #34)
