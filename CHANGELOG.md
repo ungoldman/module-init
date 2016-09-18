@@ -1,9 +1,14 @@
 # module-init change log
 
 All notable changes to this project will be documented in this file.
-This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Unreleased
+The format is based on [Keep a Changelog](http://keepachangelog.com/)
+and this project adheres to [Semantic Versioning](http://semver.org/).
+
+## [1.5.0](https://github.com/ungoldman/module-init/releases/v1.5.0) - 2016-09-17
+
+[view diff](https://github.com/ungoldman/module-init/compare/v1.4.0...v1.5.0)
+
 - templates: `.travis.yml`: drop `0.10`, `0.12`, `5`
 - templates: `CHANGELOG.md`: update header language
 - templates: `README.md`: move project description up
