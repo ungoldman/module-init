@@ -15,7 +15,7 @@ Create a new node module with all the right stuff.
 [standard-url]: http://standardjs.com/
 [downloads-image]: https://img.shields.io/npm/dm/module-init.svg?style=flat-square
 
-## Features
+## Overview
 
 `module-init` is a command-line tool for generating a new node module.
 
