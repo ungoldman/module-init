@@ -1,6 +1,6 @@
 # module-init
 
-> Create a new node module with all the right stuff.
+Create a new node module with all the right stuff.
 
 [![npm][npm-image]][npm-url]
 [![travis][travis-image]][travis-url]
