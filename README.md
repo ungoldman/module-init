@@ -37,7 +37,7 @@ The following list of files are created based on user input:
   - Sets up `npm test` script.
   - Runs [`fixpack`](https://github.com/HenrikJoreteg/fixpack).
 - **.travis.yml**
-  - Covers all major node versions in use: `0.10`, `0.12`, `4`, `5`, `6`.
+  - Covers Node.js `4` and `6`.
 - **.gitignore**
   - Ignores `node_modules` directory.
 - **index.js**
