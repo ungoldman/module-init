@@ -1,4 +1,4 @@
-# module-init
+# [module-init](https://github.com/ungoldman/module-init/)
 
 Create a new node module with all the right stuff.
 
@@ -172,7 +172,7 @@ Contributions welcome! Please read the [contributing guidelines](CONTRIBUTING.md
 
 ## See Also
 
-- [Be a Good Open Source Shepherd](http://ungoldman.com/articles/be-a-good-open-source-shepherd/)
+- [Open Source Maintenance Guidelines](http://ungoldman.com/articles/open-source-maintenance-guidelines/)
 - [init-module](https://github.com/ungoldman/init-module)
 
 ## License
