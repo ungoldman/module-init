@@ -1,4 +1,4 @@
-# [module-init](https://github.com/ungoldman/module-init/)
+# module-init
 
 Create a new node module with all the right stuff.
 
